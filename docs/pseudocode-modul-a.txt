@@ -1,0 +1,99 @@
+PROGRAM SistemPendaftaranSeminar
+
+KONSTANTA:
+  TARIF_MAHASISWA    = 75000
+  TARIF_DOSEN        = 125000
+  TARIF_UMUM         = 175000
+  DISKON_EARLY_BIRD  = 0.20
+  DISKON_KELOMPOK    = 0.10
+  MIN_ANGGOTA        = 5
+  BIAYA_SERTIFIKAT   = 20000
+  BIAYA_MAKAN        = 35000
+
+VARIABEL AKUMULATOR:
+  totalPesertaMahasiswa, totalPesertaDosen, totalPesertaUmum : INTEGER = 0
+  totalEarlyBird, totalSertifikat, totalMakan               : INTEGER = 0
+  totalDiskon, totalPendapatan                              : REAL    = 0
+  nomorUrut                                                 : INTEGER = 1
+  lanjut                                                    : KARAKTER
+
+MULAI
+  Tampilkan header
+  lanjut <- 'Y'
+
+  SELAMA lanjut = 'Y' KERJAKAN
+
+    Tampilkan "PENDAFTARAN #" + nomorUrut
+
+    ULANGI
+      Baca namaPeserta
+    SAMPAI namaPeserta tidak kosong
+
+    ULANGI
+      Baca kategori
+    SAMPAI kategori termasuk {1, 2, 3}
+
+    ULANGI
+      Baca statusEB
+    SAMPAI statusEB termasuk {'Y', 'T'}
+    earlyBird <- (statusEB = 'Y')
+
+    ULANGI
+      Baca jumlahAnggota
+    SAMPAI jumlahAnggota > 0
+    kelompok <- (jumlahAnggota >= MIN_ANGGOTA)
+
+    ULANGI
+      Baca statusSertif
+    SAMPAI statusSertif termasuk {'Y', 'T'}
+    pesanSertifikat <- (statusSertif = 'Y')
+
+    ULANGI
+      Baca statusMakan
+    SAMPAI statusMakan termasuk {'Y', 'T'}
+    pesanMakan <- (statusMakan = 'Y')
+
+    JIKA kategori = 1 MAKA tarif <- TARIF_MAHASISWA
+    JIKA kategori = 2 MAKA tarif <- TARIF_DOSEN
+    JIKA kategori = 3 MAKA tarif <- TARIF_UMUM
+
+    nominalDiskonEB <- 0
+    JIKA earlyBird MAKA
+      nominalDiskonEB <- tarif x DISKON_EARLY_BIRD
+    AKHIR JIKA
+    tarifSetelahEB <- tarif - nominalDiskonEB
+
+    nominalDiskonKelompok <- 0
+    JIKA kelompok MAKA
+      nominalDiskonKelompok <- tarifSetelahEB x DISKON_KELOMPOK
+    AKHIR JIKA
+    tarifBersih <- tarifSetelahEB - nominalDiskonKelompok
+
+    biayaTambahan <- 0
+    JIKA pesanSertifikat MAKA biayaTambahan <- biayaTambahan + BIAYA_SERTIFIKAT
+    JIKA pesanMakan      MAKA biayaTambahan <- biayaTambahan + BIAYA_MAKAN
+
+    totalTagihan       <- tarifBersih + biayaTambahan
+    totalDiskonPeserta <- nominalDiskonEB + nominalDiskonKelompok
+
+    JIKA kategori = 1 MAKA totalPesertaMahasiswa <- totalPesertaMahasiswa + 1
+    JIKA kategori = 2 MAKA totalPesertaDosen     <- totalPesertaDosen + 1
+    JIKA kategori = 3 MAKA totalPesertaUmum      <- totalPesertaUmum + 1
+    JIKA earlyBird       MAKA totalEarlyBird  <- totalEarlyBird + 1
+    JIKA pesanSertifikat MAKA totalSertifikat <- totalSertifikat + 1
+    JIKA pesanMakan      MAKA totalMakan      <- totalMakan + 1
+    totalDiskon     <- totalDiskon + totalDiskonPeserta
+    totalPendapatan <- totalPendapatan + totalTagihan
+
+    Tampilkan rincian tagihan peserta
+    nomorUrut <- nomorUrut + 1
+
+    ULANGI
+      Baca lanjut
+    SAMPAI lanjut termasuk {'Y', 'T'}
+
+  AKHIR SELAMA
+
+  Tampilkan rekapitulasi sesi
+
+SELESAI
