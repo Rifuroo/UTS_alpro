@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 513" width="100%" height="100%">
+  <rect width="680" height="513" rx="10" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+  <rect width="680" height="36" rx="10" fill="#161b22"/>
+  <circle cx="20" cy="18" r="5" fill="#f85149"/>
+  <circle cx="36" cy="18" r="5" fill="#d29922"/>
+  <circle cx="52" cy="18" r="5" fill="#3fb950"/>
+  <text x="340" y="22" fill="#8b949e" font-size="12" font-family="Segoe UI, sans-serif" text-anchor="middle" font-weight="600">Skenario 1 · Kategori Seimbang (Tie 3 Kategori)</text>
+  <line x1="0" y1="36" x2="680" y2="36" stroke="#30363d" stroke-width="1"/>
+  <text x="24" y="70" fill="#38bdf8" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="700">$ ./src/modul_b</text>
+<text x="24" y="92" fill="#facc15" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="700">=== MODUL B - REKAPITULASI PENDAFTARAN SEMINAR NASIONAL ===</text>
+<text x="24" y="114" fill="#cbd5e1" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="500">Penanggung Jawab : Praysilia Sifra (Modul B)</text>
+<text x="24" y="136" fill="#94a3b8" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="500">--- INPUT TRANSAKSI #1 ---</text>
+<text x="24" y="158" fill="#cbd5e1" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="500">Nama: Budi Santoso | Kat: 1 (Mhs) | EB: Y | Anggota: 6 | Sertif: Y | Makan: Y</text>
+<text x="24" y="180" fill="#4ade80" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="700">[OK] Pendaftaran #1 dicatat. Tagihan: Rp109.000 | Diskon: Rp21.000</text>
+<text x="24" y="202" fill="#94a3b8" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="500">--- INPUT TRANSAKSI #2 ---</text>
+<text x="24" y="224" fill="#cbd5e1" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="500">Nama: Dr. Hendra | Kat: 2 (Dosen) | EB: T | Anggota: 3 | Sertif: T | Makan: T</text>
+<text x="24" y="246" fill="#4ade80" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="700">[OK] Pendaftaran #2 dicatat. Tagihan: Rp125.000 | Diskon: Rp0</text>
+<text x="24" y="268" fill="#94a3b8" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="500">--- INPUT TRANSAKSI #3 ---</text>
+<text x="24" y="290" fill="#cbd5e1" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="500">Nama: Siti Rahma | Kat: 3 (Umum) | EB: Y | Anggota: 5 | Sertif: T | Makan: Y</text>
+<text x="24" y="312" fill="#4ade80" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="700">[OK] Pendaftaran #3 dicatat. Tagihan: Rp161.000 | Diskon: Rp49.000</text>
+<text x="24" y="334" fill="#facc15" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="700">=== LAPORAN REKAPITULASI KELUARAN MODUL B ===</text>
+<text x="24" y="356" fill="#cbd5e1" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="500">1. Mahasiswa : 1 orang (33.3%) | Tarif: Rp75.000</text>
+<text x="24" y="378" fill="#cbd5e1" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="500">2. Dosen     : 1 orang (33.3%) | Tarif: Rp125.000</text>
+<text x="24" y="400" fill="#cbd5e1" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="500">3. Umum      : 1 orang (33.3%) | Tarif: Rp175.000</text>
+<text x="24" y="422" fill="#a78bfa" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="700">&gt;&gt; Kategori Peserta Terbanyak: Ketiga kategori seimbang (1 peserta tiap kategori)</text>
+<text x="24" y="444" fill="#cbd5e1" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="500">Total Diskon : -Rp70.000 | Total Pendapatan Bersih: Rp395.000</text>
+<text x="24" y="466" fill="#4ade80" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="700">STATUS: Berhasil &amp; Terverifikasi</text>
+</svg>

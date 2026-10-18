@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 380" width="100%" height="100%">
+  <rect width="680" height="380" rx="10" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+  <rect width="680" height="36" rx="10" fill="#161b22"/>
+  <circle cx="20" cy="18" r="5" fill="#f85149"/>
+  <circle cx="36" cy="18" r="5" fill="#d29922"/>
+  <circle cx="52" cy="18" r="5" fill="#3fb950"/>
+  <text x="340" y="22" fill="#8b949e" font-size="12" font-family="Segoe UI, sans-serif" text-anchor="middle" font-weight="600">Skenario 5 · Seri Dua Kategori (Mhs &amp; Dosen Imbang)</text>
+  <line x1="0" y1="36" x2="680" y2="36" stroke="#30363d" stroke-width="1"/>
+  <text x="24" y="70" fill="#38bdf8" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="700">$ ./src/modul_b</text>
+<text x="24" y="92" fill="#facc15" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="700">=== MODUL B - REKAPITULASI KATEGORI SERI ===</text>
+<text x="24" y="114" fill="#94a3b8" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="500">--- DATA MASUKAN (5 TRANSAKSI) ---</text>
+<text x="24" y="136" fill="#cbd5e1" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="500">Mahasiswa: 2 peserta | Dosen: 2 peserta | Umum: 1 peserta</text>
+<text x="24" y="158" fill="#facc15" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="700">=== EVALUASI PERCABANGAN TIE-BREAKER ===</text>
+<text x="24" y="180" fill="#cbd5e1" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="500">- Cek Mahasiswa == Dosen &amp;&amp; Mahasiswa &gt; Umum : TRUE</text>
+<text x="24" y="202" fill="#a78bfa" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="700">&gt;&gt; Kategori Terbanyak: Mahasiswa &amp; Dosen (Imbang terbanyak: 2 peserta)</text>
+<text x="24" y="224" fill="#cbd5e1" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="500">Total Peserta: 5 orang | Total Pendapatan: Rp629.000</text>
+<text x="24" y="246" fill="#cbd5e1" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="500">Total Diskon Dikeluarkan: -Rp56.000</text>
+<text x="24" y="268" fill="#4ade80" font-size="13" font-family="JetBrains Mono, Menlo, Consolas, monospace" font-weight="700">STATUS: Berhasil - Kondisi Seri Terdeteksi Sempurna</text>
+</svg>
