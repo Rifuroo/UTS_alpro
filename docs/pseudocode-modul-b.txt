@@ -1,0 +1,204 @@
+PROGRAM SistemRekapitulasiSeminar_ModulB
+
+KONSTANTA:
+  TARIF_MAHASISWA      = 75000
+  TARIF_DOSEN          = 125000
+  TARIF_UMUM           = 175000
+  DISKON_EARLY_BIRD    = 0.20
+  DISKON_KELOMPOK      = 0.10
+  MIN_ANGGOTA_KELOMPOK = 5
+  BIAYA_SERTIFIKAT     = 20000
+  BIAYA_MAKAN          = 35000
+
+VARIABEL AKUMULATOR:
+  totalPesertaMahasiswa, totalPesertaDosen, totalPesertaUmum : INTEGER = 0
+  totalEarlyBird, totalKelompokDiskon                        : INTEGER = 0
+  totalSertifikat, totalMakan                                : INTEGER = 0
+  totalBruto, totalDiskonEB, totalDiskonKelompok             : REAL    = 0.0
+  totalDiskon, totalPendapatan                               : REAL    = 0.0
+  tagihanTerbesar                                            : REAL    = 0.0
+  namaPesertaTerbesar                                        : STRING  = "-"
+  nomorUrutTerbesar                                          : INTEGER = 0
+
+VARIABEL INPUT & KONTROL:
+  nomorUrut       : INTEGER = 1
+  lanjut          : KARAKTER = 'Y'
+  namaPeserta     : STRING
+  kategori        : INTEGER
+  statusEB        : KARAKTER
+  earlyBird       : BOOLEAN
+  jumlahAnggota   : INTEGER
+  kelompok        : BOOLEAN
+  statusSertif    : KARAKTER
+  pesanSertif     : BOOLEAN
+  statusMakan     : KARAKTER
+  pesanMakan      : BOOLEAN
+
+VARIABEL LOKAL TRANSAKSI:
+  tarif, nominalEB, tarifSetelahEB : REAL
+  nominalKlp, tarifBersih          : REAL
+  biayaTambahan, diskonPeserta     : REAL
+  tagihanPeserta                   : REAL
+
+VARIABEL STATISTIK & REKAP:
+  totalPeserta                     : INTEGER
+  persenMhs, persenDsn, persenUmum : REAL
+  rataRataPendapatan, rataRataDiskon : REAL
+  kategoriTerbanyak                : STRING
+
+MULAI
+  Tampilkan Header Modul B (Rekapitulasi Seminar Nasional)
+
+  SELAMA lanjut = 'Y' KERJAKAN
+    Tampilkan "INPUT TRANSAKSI #" + nomorUrut
+
+    // 1. Input dengan Validasi
+    ULANGI
+      Baca namaPeserta
+    SAMPAI namaPeserta != ""
+
+    ULANGI
+      Baca kategori
+    SAMPAI kategori TermasukDalam {1, 2, 3}
+
+    ULANGI
+      Baca statusEB
+    SAMPAI statusEB TermasukDalam {'Y', 'T'}
+    earlyBird <- (statusEB = 'Y')
+
+    ULANGI
+      Baca jumlahAnggota
+    SAMPAI jumlahAnggota > 0
+    kelompok <- (jumlahAnggota >= MIN_ANGGOTA_KELOMPOK)
+
+    ULANGI
+      Baca statusSertif
+    SAMPAI statusSertif TermasukDalam {'Y', 'T'}
+    pesanSertif <- (statusSertif = 'Y')
+
+    ULANGI
+      Baca statusMakan
+    SAMPAI statusMakan TermasukDalam {'Y', 'T'}
+    pesanMakan <- (statusMakan = 'Y')
+
+    // 2. Perhitungan Tagihan Per Peserta
+    JIKA kategori = 1 MAKA
+      tarif <- TARIF_MAHASISWA
+    SELAIN JIKA kategori = 2 MAKA
+      tarif <- TARIF_DOSEN
+    SELAIN
+      tarif <- TARIF_UMUM
+    AKHIR JIKA
+
+    nominalEB <- 0.0
+    JIKA earlyBird MAKA
+      nominalEB <- tarif * DISKON_EARLY_BIRD
+    AKHIR JIKA
+    tarifSetelahEB <- tarif - nominalEB
+
+    nominalKlp <- 0.0
+    JIKA kelompok MAKA
+      nominalKlp <- tarifSetelahEB * DISKON_KELOMPOK
+    AKHIR JIKA
+    tarifBersih <- tarifSetelahEB - nominalKlp
+
+    biayaTambahan <- 0.0
+    JIKA pesanSertif MAKA
+      biayaTambahan <- biayaTambahan + BIAYA_SERTIFIKAT
+    AKHIR JIKA
+    JIKA pesanMakan MAKA
+      biayaTambahan <- biayaTambahan + BIAYA_MAKAN
+    AKHIR JIKA
+
+    diskonPeserta  <- nominalEB + nominalKlp
+    tagihanPeserta <- tarifBersih + biayaTambahan
+
+    // 3. Akumulasi Rekapitulasi (Fokus Modul B)
+    JIKA kategori = 1 MAKA
+      totalPesertaMahasiswa <- totalPesertaMahasiswa + 1
+    SELAIN JIKA kategori = 2 MAKA
+      totalPesertaDosen <- totalPesertaDosen + 1
+    SELAIN
+      totalPesertaUmum <- totalPesertaUmum + 1
+    AKHIR JIKA
+
+    JIKA earlyBird MAKA
+      totalEarlyBird <- totalEarlyBird + 1
+    AKHIR JIKA
+
+    JIKA kelompok MAKA
+      totalKelompokDiskon <- totalKelompokDiskon + 1
+    AKHIR JIKA
+
+    JIKA pesanSertif MAKA
+      totalSertifikat <- totalSertifikat + 1
+    AKHIR JIKA
+
+    JIKA pesanMakan MAKA
+      totalMakan <- totalMakan + 1
+    AKHIR JIKA
+
+    totalBruto          <- totalBruto + (tarif + biayaTambahan)
+    totalDiskonEB       <- totalDiskonEB + nominalEB
+    totalDiskonKelompok <- totalDiskonKelompok + nominalKlp
+    totalDiskon         <- totalDiskon + diskonPeserta
+    totalPendapatan     <- totalPendapatan + tagihanPeserta
+
+    // Pelacak Transaksi Terbesar
+    JIKA tagihanPeserta > tagihanTerbesar MAKA
+      tagihanTerbesar     <- tagihanPeserta
+      namaPesertaTerbesar <- namaPeserta
+      nomorUrutTerbesar   <- nomorUrut
+    AKHIR JIKA
+
+    Tampilkan konfirmasi data transaksi berhasil dicatat
+    nomorUrut <- nomorUrut + 1
+
+    ULANGI
+      Baca lanjut
+    SAMPAI lanjut TermasukDalam {'Y', 'T'}
+  AKHIR SELAMA
+
+  // 4. Proses Rekapitulasi & Statistik Akhir
+  totalPeserta <- totalPesertaMahasiswa + totalPesertaDosen + totalPesertaUmum
+
+  JIKA totalPeserta = 0 MAKA
+    Tampilkan "Tidak ada data transaksi yang dicatat."
+  SELAIN
+    // Hitung Persentase
+    persenMhs  <- (totalPesertaMahasiswa / totalPeserta) * 100
+    persenDsn  <- (totalPesertaDosen / totalPeserta) * 100
+    persenUmum <- (totalPesertaUmum / totalPeserta) * 100
+
+    // Hitung Rata-rata
+    rataRataPendapatan <- totalPendapatan / totalPeserta
+    rataRataDiskon     <- totalDiskon / totalPeserta
+
+    // Penentuan Kategori Terbanyak (Percabangan Komprehensif)
+    JIKA (totalPesertaMahasiswa = totalPesertaDosen) DAN (totalPesertaDosen = totalPesertaUmum) MAKA
+      kategoriTerbanyak <- "Ketiga kategori seimbang"
+    SELAIN JIKA (totalPesertaMahasiswa = totalPesertaDosen) DAN (totalPesertaMahasiswa > totalPesertaUmum) MAKA
+      kategoriTerbanyak <- "Mahasiswa & Dosen (Imbang terbanyak)"
+    SELAIN JIKA (totalPesertaMahasiswa = totalPesertaUmum) DAN (totalPesertaMahasiswa > totalPesertaDosen) MAKA
+      kategoriTerbanyak <- "Mahasiswa & Umum (Imbang terbanyak)"
+    SELAIN JIKA (totalPesertaDosen = totalPesertaUmum) DAN (totalPesertaDosen > totalPesertaMahasiswa) MAKA
+      kategoriTerbanyak <- "Dosen & Umum (Imbang terbanyak)"
+    SELAIN JIKA (totalPesertaMahasiswa > totalPesertaDosen) DAN (totalPesertaMahasiswa > totalPesertaUmum) MAKA
+      kategoriTerbanyak <- "Mahasiswa"
+    SELAIN JIKA (totalPesertaDosen > totalPesertaMahasiswa) DAN (totalPesertaDosen > totalPesertaUmum) MAKA
+      kategoriTerbanyak <- "Dosen"
+    SELAIN
+      kategoriTerbanyak <- "Umum"
+    AKHIR JIKA
+
+    // 5. Output Laporan Rekapitulasi Lengkap
+    Tampilkan Tabel Jumlah Peserta per Kategori dan Persentasenya
+    Tampilkan Kategori Peserta Terbanyak
+    Tampilkan Jumlah Early Bird, Sertifikat, dan Paket Makan
+    Tampilkan Rincian Diskon dan Total Pendapatan Bersih
+    Tampilkan Statistik Rata-rata dan Transaksi Terbesar
+  AKHIR JIKA
+
+  Tampilkan Pesan Program Selesai
+SELESAI
+
