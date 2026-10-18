@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistem Pendaftaran Seminar Nasional | SSI1144</title>
+  <meta name="description" content="Proyek UTS SSI1144 - Algoritma dan Pengantar Pemrograman. Sistem Pendaftaran Seminar Nasional berbasis C++. Program Studi Sistem Informasi, Universitas Ma Chung.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="shell">
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <a href="index.html" class="topbar-brand">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      Seminar Nasional
+      <span class="topbar-badge">SSI1144</span>
+    </a>
+    <div class="topbar-right">
+      <a href="https://github.com/" class="topbar-link" target="_blank" rel="noopener">GitHub Repo</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Buka menu">&#9776;</button>
+  </header>
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Halaman Utama</div>
+      <ul class="sidebar-nav">
+        <li><a href="index.html" class="active">Beranda</a></li>
+        <li><a href="analisis.html">Analisis Masalah</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Modul Program</div>
+      <ul class="sidebar-nav">
+        <li><a href="modul-a.html">Modul A</a></li>
+        <li><a href="modul-b.html">Modul B</a></li>
+        <li><a href="integrasi.html">Program Terintegrasi</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Dokumentasi</div>
+      <ul class="sidebar-nav">
+        <li><a href="refleksi.html">Refleksi</a></li>
+        <li><a href="pernyataan-ai.html">Pernyataan AI</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="page-header">
+      <div class="page-tag">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        Studi Kasus 07 · SSI1144
+      </div>
+      <h1 class="page-title">Sistem Pendaftaran<br>Seminar Nasional</h1>
+      <p class="page-desc">Program C++ untuk menghitung biaya pendaftaran dan rekapitulasi pendapatan seminar nasional. Proyek UTS Algoritma dan Pengantar Pemrograman.</p>
+    </div>
+
+    <!-- Stat cards -->
+    <div class="card-grid">
+      <div class="stat-card">
+        <div class="stat-label">Studi Kasus</div>
+        <div class="stat-value">07</div>
+        <div class="stat-desc">Seminar Nasional</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Bahasa</div>
+        <div class="stat-value">C++</div>
+        <div class="stat-desc">Standard C++17</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Modul</div>
+        <div class="stat-value">3</div>
+        <div class="stat-desc">A · B · Integrasi</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Kategori Tarif</div>
+        <div class="stat-value">3</div>
+        <div class="stat-desc">Mahasiswa · Dosen · Umum</div>
+      </div>
+    </div>
+
+    <h2>Deskripsi Program</h2>
+    <div class="card">
+      <p>Panitia seminar nasional membutuhkan program untuk memproses pendaftaran peserta dan merekap pendapatan kegiatan. Program ini dibangun berbasis console menggunakan C++, mencakup perhitungan tarif progresif dengan diskon early bird dan diskon kelompok.</p>
+    </div>
+
+    <h2>Ketentuan Biaya</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Kategori</th>
+            <th>Tarif Dasar</th>
+            <th>Diskon Early Bird</th>
+            <th>Diskon Kelompok (&ge;5)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mahasiswa</td>
+            <td>Rp75.000</td>
+            <td>20% dari tarif dasar</td>
+            <td>10% dari tarif setelah EB</td>
+          </tr>
+          <tr>
+            <td>Dosen</td>
+            <td>Rp125.000</td>
+            <td>20% dari tarif dasar</td>
+            <td>10% dari tarif setelah EB</td>
+          </tr>
+          <tr>
+            <td>Umum</td>
+            <td>Rp175.000</td>
+            <td>20% dari tarif dasar</td>
+            <td>10% dari tarif setelah EB</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-info">
+      <span>Biaya sertifikat cetak (Rp20.000) dan paket makan (Rp35.000) ditambahkan setelah semua diskon dihitung — tidak ikut didiskon.</span>
+    </div>
+
+    <h2>Anggota Kelompok</h2>
+    <div class="card">
+      <div class="table-wrap" style="margin:0; border:none;">
+        <table>
+          <thead>
+            <tr><th>Nama</th><th>NIM</th><th>Tanggung Jawab</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Riflo Ahmad Nendriansyah</td>
+              <td>322610018</td>
+              <td><span class="badge badge-blue">Modul A</span></td>
+            </tr>
+            <tr>
+              <td>— (isi nama)</td>
+              <td>— (isi NIM)</td>
+              <td><span class="badge badge-purple">Modul B</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h2>Navigasi Cepat</h2>
+    <div class="card-grid">
+      <a href="analisis.html" style="text-decoration:none;">
+        <div class="stat-card" style="cursor:pointer; transition: border-color 0.15s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div class="stat-label">01</div>
+          <div style="font-weight:700; color:var(--text); font-size:14px;">Analisis Masalah</div>
+          <div class="stat-desc">IPO, variabel, tipe data</div>
+        </div>
+      </a>
+      <a href="modul-a.html" style="text-decoration:none;">
+        <div class="stat-card" style="cursor:pointer; transition: border-color 0.15s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div class="stat-label">02</div>
+          <div style="font-weight:700; color:var(--text); font-size:14px;">Modul A</div>
+          <div class="stat-desc">Proses utama pendaftaran</div>
+        </div>
+      </a>
+      <a href="modul-b.html" style="text-decoration:none;">
+        <div class="stat-card" style="cursor:pointer; transition: border-color 0.15s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div class="stat-label">03</div>
+          <div style="font-weight:700; color:var(--text); font-size:14px;">Modul B</div>
+          <div class="stat-desc">Rekapitulasi kegiatan</div>
+        </div>
+      </a>
+      <a href="integrasi.html" style="text-decoration:none;">
+        <div class="stat-card" style="cursor:pointer; transition: border-color 0.15s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div class="stat-label">04</div>
+          <div style="font-weight:700; color:var(--text); font-size:14px;">Integrasi</div>
+          <div class="stat-desc">Program final gabungan</div>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>SSI1144 · Algoritma dan Pengantar Pemrograman · Universitas Ma Chung</span>
+    <span>Studi Kasus 07 · Sistem Pendaftaran Seminar Nasional</span>
+  </footer>
+
+</div>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const sidebar   = document.getElementById('sidebar');
+  hamburger.addEventListener('click', () => sidebar.classList.toggle('open'));
+  document.addEventListener('click', e => {
+    if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
+      sidebar.classList.remove('open');
+    }
+  });
+</script>
+</body>
+</html>
