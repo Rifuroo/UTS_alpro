@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analisis Masalah | Seminar Nasional SSI1144</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="shell">
+  <header class="topbar">
+    <a href="index.html" class="topbar-brand">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      Seminar Nasional <span class="topbar-badge">SSI1144</span>
+    </a>
+    <button class="hamburger" id="hamburger">&#9776;</button>
+  </header>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Halaman Utama</div>
+      <ul class="sidebar-nav">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="analisis.html" class="active">Analisis Masalah</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Modul Program</div>
+      <ul class="sidebar-nav">
+        <li><a href="modul-a.html">Modul A</a></li>
+        <li><a href="modul-b.html">Modul B</a></li>
+        <li><a href="integrasi.html">Program Terintegrasi</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Dokumentasi</div>
+      <ul class="sidebar-nav">
+        <li><a href="refleksi.html">Refleksi</a></li>
+        <li><a href="pernyataan-ai.html">Pernyataan AI</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="page-header">
+      <div class="page-tag">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        Analisis · IPO · Variabel
+      </div>
+      <h1 class="page-title">Analisis Masalah &amp;<br>Spesifikasi Algoritma</h1>
+      <p class="page-desc">Analisis komprehensif Studi Kasus 07: Sistem Pendaftaran Seminar Nasional. Mencakup perumusan masalah, batasan sistem, tabel Input-Process-Output (IPO), serta tabel variabel dan konstanta.</p>
+    </div>
+
+    <!-- 1. LATAR BELAKANG & TUJUAN -->
+    <section id="deskripsi-masalah">
+      <h2>1. Deskripsi &amp; Rumusan Masalah</h2>
+      <div class="card">
+        <p>Panitia penyelenggara Seminar Nasional membutuhkan sistem otomasi pendaftaran yang andal berbasis terminal (console) untuk mempercepat verifikasi pembayaran dan pencatatan peserta. Pada sistem manual, sering terjadi kekeliruan perhitungan diskon bertingkat (early bird dan diskon rombongan/kelompok) serta kerancuan penambahan biaya operasional (sertifikat cetak dan paket konsumsi/makan) yang seharusnya tidak dipotong diskon.</p>
+        <p style="margin-top:10px;">Program dirancang untuk menyelesaikan masalah tersebut dengan mekanisme validasi ketat, kalkulasi transparan per peserta (Modul A), serta rekapitulasi sesi secara akumulatif (Modul B).</p>
+      </div>
+    </section>
+
+    <!-- 2. KETENTUAN & ATURAN BISNIS -->
+    <section id="aturan-bisnis">
+      <h2>2. Ketentuan Tarif &amp; Aturan Perhitungan</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Komponen</th>
+              <th>Kategori / Syarat</th>
+              <th>Tarif / Nilai</th>
+              <th>Keterangan Aturan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="3"><strong>Tarif Pendaftaran Dasar</strong></td>
+              <td>1. Mahasiswa</td>
+              <td>Rp75.000 / orang</td>
+              <td>Pilihan kategori diinput numerik (1)</td>
+            </tr>
+            <tr>
+              <td>2. Dosen</td>
+              <td>Rp125.000 / orang</td>
+              <td>Pilihan kategori diinput numerik (2)</td>
+            </tr>
+            <tr>
+              <td>3. Umum</td>
+              <td>Rp175.000 / orang</td>
+              <td>Pilihan kategori diinput numerik (3)</td>
+            </tr>
+            <tr>
+              <td><strong>Diskon Early Bird</strong></td>
+              <td>Status Early Bird = 'Y'</td>
+              <td>20% dari tarif dasar</td>
+              <td><code>nominalDiskonEB = tarif × 0.20</code></td>
+            </tr>
+            <tr>
+              <td><strong>Diskon Kelompok</strong></td>
+              <td>Jumlah anggota &ge; 5 orang</td>
+              <td>10% dari tarif setelah EB</td>
+              <td><code>nominalDiskonKlp = (tarif - nominalDiskonEB) × 0.10</code></td>
+            </tr>
+            <tr>
+              <td rowspan="2"><strong>Biaya Tambahan</strong> (Opsional)</td>
+              <td>Sertifikat Cetak</td>
+              <td>Rp20.000</td>
+              <td>Tidak dikenakan diskon apapun</td>
+            </tr>
+            <tr>
+              <td>Paket Makan</td>
+              <td>Rp35.000</td>
+              <td>Tidak dikenakan diskon apapun</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 3. TABEL IPO -->
+    <section id="tabel-ipo">
+      <h2>3. Analisis Input - Process - Output (IPO)</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:28%;">Input (Masukan)</th>
+              <th style="width:42%;">Process (Pemrosesan Logika &amp; Aritmetika)</th>
+              <th style="width:30%;">Output (Keluaran)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul style="padding-left:16px; margin:0; line-height:1.8;">
+                  <li><code>namaPeserta</code> (String)</li>
+                  <li><code>kategori</code> (1, 2, atau 3)</li>
+                  <li><code>statusEB</code> ('Y' / 'T')</li>
+                  <li><code>jumlahAnggota</code> (Integer &gt; 0)</li>
+                  <li><code>statusSertif</code> ('Y' / 'T')</li>
+                  <li><code>statusMakan</code> ('Y' / 'T')</li>
+                  <li><code>lanjut</code> ('Y' / 'T')</li>
+                </ul>
+              </td>
+              <td>
+                <ol style="padding-left:16px; margin:0; line-height:1.7;">
+                  <li><strong>Validasi Input:</strong> Memastikan nama tidak kosong, numerik berada dalam range yang diizinkan, dan tidak bernilai nol/negatif.</li>
+                  <li><strong>Percabangan Tarif:</strong> Seleksi <code>tarif</code> dasar berdasarkan <code>kategori</code>.</li>
+                  <li><strong>Kalkulasi Diskon EB:</strong> Jika <code>earlyBird</code>, potong 20% dari tarif dasar.</li>
+                  <li><strong>Kalkulasi Diskon Kelompok:</strong> Jika <code>jumlahAnggota &ge; 5</code>, potong 10% dari tarif setelah diskon EB.</li>
+                  <li><strong>Kalkulasi Biaya Tambahan:</strong> Akumulasikan biaya sertifikat dan makan tanpa pemotongan diskon.</li>
+                  <li><strong>Penjumlahan Tagihan:</strong> <code>totalTagihan = tarifBersih + biayaTambahan</code>.</li>
+                  <li><strong>Akumulasi Sesi:</strong> Menjumlahkan frekuensi kategori, total diskon, dan total pendapatan.</li>
+                  <li><strong>Perulangan (Looping):</strong> Memeriksa apakah operator masih ingin input data berikutnya (<code>lanjut == 'Y'</code>).</li>
+                </ol>
+              </td>
+              <td>
+                <ul style="padding-left:16px; margin:0; line-height:1.8;">
+                  <li>Nomor antrian transaksi pendaftaran.</li>
+                  <li>Rincian tarif dasar, rincian potongan tiap jenis diskon.</li>
+                  <li>Rincian item biaya tambahan.</li>
+                  <li><strong>Total tagihan final per peserta</strong>.</li>
+                  <li><strong>Rekapitulasi Sesi:</strong>
+                    <ul style="padding-left:16px; margin:0;">
+                      <li>Jumlah peserta per kategori</li>
+                      <li>Jumlah peserta early bird</li>
+                      <li>Jumlah pesanan sertifikat &amp; makan</li>
+                      <li>Total seluruh diskon diberikan</li>
+                      <li>Total pendapatan kumulatif</li>
+                    </ul>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 4. TABEL VARIABEL DAN TIPE DATA -->
+    <section id="tabel-variabel">
+      <h2>4. Variabel, Konstanta, dan Tipe Data (Modul A)</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Nama Variabel / Konstanta</th>
+              <th>Tipe Data</th>
+              <th>Nilai Awal / Default</th>
+              <th>Kategori</th>
+              <th>Deskripsi &amp; Peran</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>TARIF_MAHASISWA</code></td><td>Double / Real</td><td>75000.0</td><td>Konstanta</td><td>Biaya pendaftaran kategori mahasiswa</td></tr>
+            <tr><td><code>TARIF_DOSEN</code></td><td>Double / Real</td><td>125000.0</td><td>Konstanta</td><td>Biaya pendaftaran kategori dosen</td></tr>
+            <tr><td><code>TARIF_UMUM</code></td><td>Double / Real</td><td>175000.0</td><td>Konstanta</td><td>Biaya pendaftaran kategori umum</td></tr>
+            <tr><td><code>DISKON_EARLY_BIRD</code></td><td>Double / Real</td><td>0.20</td><td>Konstanta</td><td>Persentase diskon pendaftaran awal (20%)</td></tr>
+            <tr><td><code>DISKON_KELOMPOK</code></td><td>Double / Real</td><td>0.10</td><td>Konstanta</td><td>Persentase diskon rombongan (10%)</td></tr>
+            <tr><td><code>MIN_ANGGOTA_KELOMPOK</code></td><td>Integer</td><td>5</td><td>Konstanta</td><td>Batas minimum peserta untuk dapat diskon</td></tr>
+            <tr><td><code>BIAYA_SERTIFIKAT</code></td><td>Double / Real</td><td>20000.0</td><td>Konstanta</td><td>Tarif cetak sertifikat fisik</td></tr>
+            <tr><td><code>BIAYA_MAKAN</code></td><td>Double / Real</td><td>35000.0</td><td>Konstanta</td><td>Tarif paket konsumsi makan</td></tr>
+            <tr><td><code>namaPeserta</code></td><td>String</td><td>""</td><td>Input</td><td>Menyimpan nama lengkap peserta</td></tr>
+            <tr><td><code>kategori</code></td><td>Integer</td><td>—</td><td>Input</td><td>Pilihan kelompok peserta (1, 2, atau 3)</td></tr>
+            <tr><td><code>earlyBird</code></td><td>Boolean</td><td>false</td><td>Input/Kondisi</td><td>Indikator apakah peserta terdaftar early bird</td></tr>
+            <tr><td><code>jumlahAnggota</code></td><td>Integer</td><td>—</td><td>Input</td><td>Jumlah rombongan peserta (&gt; 0)</td></tr>
+            <tr><td><code>kelompok</code></td><td>Boolean</td><td>false</td><td>Kondisi</td><td>True jika <code>jumlahAnggota &ge; 5</code></td></tr>
+            <tr><td><code>pesanSertifikat</code></td><td>Boolean</td><td>false</td><td>Input/Kondisi</td><td>True jika memilih opsi cetak sertifikat</td></tr>
+            <tr><td><code>pesanMakan</code></td><td>Boolean</td><td>false</td><td>Input/Kondisi</td><td>True jika memilih opsi paket makan</td></tr>
+            <tr><td><code>tarif</code></td><td>Double / Real</td><td>0.0</td><td>Proses</td><td>Tarif dasar sesuai kategori yang dipilih</td></tr>
+            <tr><td><code>nominalDiskonEB</code></td><td>Double / Real</td><td>0.0</td><td>Proses</td><td>Besaran rupiah diskon early bird</td></tr>
+            <tr><td><code>tarifSetelahEB</code></td><td>Double / Real</td><td>0.0</td><td>Proses</td><td>Tarif setelah dipotong diskon early bird</td></tr>
+            <tr><td><code>nominalDiskonKelompok</code></td><td>Double / Real</td><td>0.0</td><td>Proses</td><td>Besaran rupiah diskon rombongan kelompok</td></tr>
+            <tr><td><code>tarifBersih</code></td><td>Double / Real</td><td>0.0</td><td>Proses</td><td>Tarif pendaftaran setelah semua diskon</td></tr>
+            <tr><td><code>biayaTambahan</code></td><td>Double / Real</td><td>0.0</td><td>Proses</td><td>Total biaya sertifikat dan paket makan</td></tr>
+            <tr><td><code>totalDiskonPeserta</code></td><td>Double / Real</td><td>0.0</td><td>Proses/Output</td><td>Akumulasi diskon untuk satu peserta</td></tr>
+            <tr><td><code>totalTagihan</code></td><td>Double / Real</td><td>0.0</td><td>Output</td><td>Tagihan akhir yang harus dibayar peserta</td></tr>
+            <tr><td><code>totalPesertaMahasiswa</code></td><td>Integer</td><td>0</td><td>Akumulator</td><td>Total transaksi kategori mahasiswa</td></tr>
+            <tr><td><code>totalPesertaDosen</code></td><td>Integer</td><td>0</td><td>Akumulator</td><td>Total transaksi kategori dosen</td></tr>
+            <tr><td><code>totalPesertaUmum</code></td><td>Integer</td><td>0</td><td>Akumulator</td><td>Total transaksi kategori umum</td></tr>
+            <tr><td><code>totalEarlyBird</code></td><td>Integer</td><td>0</td><td>Akumulator</td><td>Total peserta yang mendapat early bird</td></tr>
+            <tr><td><code>totalSertifikat</code></td><td>Integer</td><td>0</td><td>Akumulator</td><td>Total sertifikat fisik yang dipesan</td></tr>
+            <tr><td><code>totalMakan</code></td><td>Integer</td><td>0</td><td>Akumulator</td><td>Total paket makan yang dipesan</td></tr>
+            <tr><td><code>totalDiskon</code></td><td>Double / Real</td><td>0.0</td><td>Akumulator</td><td>Total nominal diskon yang dikeluarkan</td></tr>
+            <tr><td><code>totalPendapatan</code></td><td>Double / Real</td><td>0.0</td><td>Akumulator</td><td>Total pemasukan seminar yang diterima</td></tr>
+            <tr><td><code>nomorUrut</code></td><td>Integer</td><td>1</td><td>Iterasi</td><td>Penomoran urut transaksi pendaftaran</td></tr>
+            <tr><td><code>lanjut</code></td><td>Char</td><td>'Y'</td><td>Kontrol Loop</td><td>Kondisi perulangan program utama ('Y' / 'T')</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <span>SSI1144 · Algoritma dan Pengantar Pemrograman · Universitas Ma Chung</span>
+    <span>Studi Kasus 07 · Sistem Pendaftaran Seminar Nasional</span>
+  </footer>
+</div>
+<script>
+  const h = document.getElementById('hamburger'), s = document.getElementById('sidebar');
+  h.addEventListener('click', () => s.classList.toggle('open'));
+  document.addEventListener('click', e => { if (!s.contains(e.target) && !h.contains(e.target)) s.classList.remove('open'); });
+</script>
+</body>
+</html>
