@@ -1,0 +1,252 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1620" width="100%" height="100%" style="background:#0f172a; font-family:'Segoe UI',system-ui,-apple-system,sans-serif;">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="grad-start" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="grad-process" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="grad-io" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#6d28d9"/>
+    </linearGradient>
+    <linearGradient id="grad-decision" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="grad-end" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#b91c1c"/>
+    </linearGradient>
+
+    <!-- Filters for soft shadow -->
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+
+    <!-- Marker Arrow -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#f87171"/>
+    </marker>
+  </defs>
+
+  <style>
+    .label-title { font-size: 20px; font-weight: 700; fill: #f8fafc; text-anchor: middle; }
+    .label-sub { font-size: 13px; fill: #94a3b8; text-anchor: middle; }
+    .label-author { font-size: 12px; fill: #a78bfa; text-anchor: middle; font-weight: 600; }
+    .node-text { font-size: 13px; font-weight: 600; fill: #ffffff; text-anchor: middle; }
+    .node-subtext { font-size: 11px; fill: #e2e8f0; text-anchor: middle; }
+    .flow-line { stroke: #94a3b8; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+    .flow-loop { stroke: #38bdf8; stroke-width: 2; stroke-dasharray: 5,5; fill: none; marker-end: url(#arrow-blue); }
+    .branch-label { font-size: 11px; font-weight: 700; fill: #cbd5e1; }
+  </style>
+
+  <!-- Title Card -->
+  <text x="450" y="38" class="label-title">FLOWCHART MODUL B · REKAPITULASI &amp; STATISTIK</text>
+  <text x="450" y="58" class="label-sub">Studi Kasus 07 · Sistem Pendaftaran Seminar Nasional (SSI1144)</text>
+  <text x="450" y="76" class="label-author">Penanggung Jawab: Praysilia Sifra (Modul B)</text>
+
+  <!-- 1. Start (Terminator) -->
+  <g filter="url(#shadow)">
+    <rect x="350" y="95" width="200" height="42" rx="21" fill="url(#grad-start)"/>
+    <text x="450" y="121" class="node-text">MULAI</text>
+  </g>
+
+  <!-- Flow 1 -> 2 -->
+  <path d="M 450 137 L 450 165" class="flow-line"/>
+
+  <!-- 2. Init Akumulator (Process) -->
+  <g filter="url(#shadow)">
+    <rect x="230" y="165" width="440" height="56" rx="8" fill="url(#grad-process)"/>
+    <text x="450" y="187" class="node-text">Inisialisasi Variabel Akumulator Modul B</text>
+    <text x="450" y="206" class="node-subtext">totalMhs=0, totalDsn=0, totalUmum=0, totalEB=0, totalSertif=0, totalMakan=0</text>
+    <text x="450" y="218" class="node-subtext">totalDiskon=0, totalPendapatan=0, tagihanTerbesar=0, no=1, lanjut='Y'</text>
+  </g>
+
+  <!-- Flow 2 -> 3 -->
+  <path d="M 450 221 L 450 250" class="flow-line"/>
+
+  <!-- 3. Loop Condition: lanjut == 'Y'? (Decision) -->
+  <g filter="url(#shadow)">
+    <polygon points="450,250 580,295 450,340 320,295" fill="url(#grad-decision)"/>
+    <text x="450" y="291" class="node-text">lanjut == 'Y'?</text>
+    <text x="450" y="307" class="node-subtext">(Perulangan Transaksi)</text>
+  </g>
+
+  <text x="460" y="360" class="branch-label" style="fill:#10b981;">Ya (Lanjut Masukan)</text>
+  <text x="590" y="288" class="branch-label" style="fill:#f87171;">Tidak (Selesai Input)</text>
+
+  <!-- Flow 3 -> 4 (Inside Loop) -->
+  <path d="M 450 340 L 450 380" class="flow-line"/>
+
+  <!-- 4. Input Data Peserta (I/O) -->
+  <g filter="url(#shadow)">
+    <polygon points="260,380 660,380 620,445 220,445" fill="url(#grad-io)"/>
+    <text x="450" y="405" class="node-text">Input Data Peserta (dengan Validasi):</text>
+    <text x="450" y="423" class="node-subtext">namaPeserta, kategori (1/2/3), statusEB (Y/T),</text>
+    <text x="450" y="437" class="node-subtext">jumlahAnggota (&gt;0), statusSertif (Y/T), statusMakan (Y/T)</text>
+  </g>
+
+  <!-- Flow 4 -> 5 -->
+  <path d="M 450 445 L 450 475" class="flow-line"/>
+
+  <!-- 5. Perhitungan Tagihan Peserta (Process) -->
+  <g filter="url(#shadow)">
+    <rect x="250" y="475" width="400" height="52" rx="8" fill="url(#grad-process)"/>
+    <text x="450" y="496" class="node-text">Kalkulasi Tagihan &amp; Diskon Peserta</text>
+    <text x="450" y="514" class="node-subtext">tarif, diskonEB (20%), diskonKlp (10% jika &gt;=5), tambahan, tagihan</text>
+  </g>
+
+  <!-- Flow 5 -> 6 -->
+  <path d="M 450 527 L 450 555" class="flow-line"/>
+
+  <!-- 6. Akumulasi Rekapitulasi (Process) -->
+  <g filter="url(#shadow)">
+    <rect x="230" y="555" width="440" height="58" rx="8" fill="url(#grad-process)"/>
+    <text x="450" y="575" class="node-text">Akumulasi ke Variabel Rekapitulasi</text>
+    <text x="450" y="593" class="node-subtext">Update: totalMhs/Dsn/Umum++, totalEB++, totalSertif++, totalMakan++</text>
+    <text x="450" y="606" class="node-subtext">totalDiskon += diskonPeserta, totalPendapatan += tagihanPeserta</text>
+  </g>
+
+  <!-- Flow 6 -> 7 -->
+  <path d="M 450 613 L 450 640" class="flow-line"/>
+
+  <!-- 7. Decision: tagihanPeserta > tagihanTerbesar? (Decision) -->
+  <g filter="url(#shadow)">
+    <polygon points="450,640 590,680 450,720 310,680" fill="url(#grad-decision)"/>
+    <text x="450" y="676" class="node-text">tagihan &gt; tagihanTerbesar?</text>
+    <text x="450" y="692" class="node-subtext">(Pelacak Transaksi Terbesar)</text>
+  </g>
+
+  <!-- Branch Tagihan Terbesar: Ya -> Process Update -->
+  <path d="M 310 680 L 190 680 L 190 735" class="flow-line"/>
+  <text x="215" y="672" class="branch-label" style="fill:#10b981;">Ya</text>
+  <g filter="url(#shadow)">
+    <rect x="90" y="735" width="200" height="42" rx="6" fill="url(#grad-process)"/>
+    <text x="190" y="754" class="node-text">Update Rekor Terbesar:</text>
+    <text x="190" y="768" class="node-subtext">tagihanTerbesar = tagihan</text>
+  </g>
+
+  <!-- Branch Tagihan Terbesar: Tidak -> Bypass -->
+  <path d="M 450 720 L 450 805" class="flow-line"/>
+  <text x="458" y="738" class="branch-label" style="fill:#cbd5e1;">Tidak</text>
+  <path d="M 190 777 L 190 805 L 450 805" style="stroke: #94a3b8; stroke-width: 2; fill: none;"/>
+
+  <!-- 8. Konfirmasi & Tanya Lanjut (I/O) -->
+  <path d="M 450 805 L 450 825" class="flow-line"/>
+  <g filter="url(#shadow)">
+    <polygon points="270,825 650,825 610,875 230,875" fill="url(#grad-io)"/>
+    <text x="440" y="847" class="node-text">Cetak Konfirmasi Pencatatan Transaksi #nomorUrut</text>
+    <text x="440" y="863" class="node-subtext">nomorUrut++, Input pilihan: lanjut ('Y' / 'T')</text>
+  </g>
+
+  <!-- Loop back from 8 to 3 -->
+  <path d="M 230 850 L 50 850 L 50 295 L 320 295" class="flow-loop"/>
+  <text x="60" y="570" class="branch-label" style="fill:#38bdf8; font-size:12px;">Ulangi jika lanjut == 'Y'</text>
+
+  <!-- Flow 3 (Tidak) -> 9. Rekapitulasi Awal -->
+  <path d="M 580 295 L 820 295 L 820 910 L 450 910" class="flow-line"/>
+
+  <!-- 9. Decision: totalPeserta == 0? -->
+  <g filter="url(#shadow)">
+    <polygon points="450,910 560,945 450,980 340,945" fill="url(#grad-decision)"/>
+    <text x="450" y="942" class="node-text">totalPeserta == 0?</text>
+    <text x="450" y="957" class="node-subtext">(Validasi Data Kosong)</text>
+  </g>
+
+  <!-- Branch totalPeserta == 0: Ya -->
+  <path d="M 340 945 L 210 945 L 210 1000" class="flow-line"/>
+  <text x="245" y="938" class="branch-label" style="fill:#f87171;">Ya (0 Data)</text>
+  <g filter="url(#shadow)">
+    <polygon points="120,1000 320,1000 290,1045 90,1045" fill="url(#grad-io)"/>
+    <text x="205" y="1022" class="node-text">Tampilkan Pesan:</text>
+    <text x="205" y="1037" class="node-subtext">"Tidak ada transaksi dicatat"</text>
+  </g>
+  <path d="M 205 1045 L 205 1560 L 350 1560" class="flow-line"/>
+
+  <!-- Branch totalPeserta > 0: Tidak -->
+  <path d="M 450 980 L 450 1010" class="flow-line"/>
+  <text x="460" y="998" class="branch-label" style="fill:#10b981;">Tidak (&gt;0 Data)</text>
+
+  <!-- 10. Hitung Persentase & Rata-rata (Process) -->
+  <g filter="url(#shadow)">
+    <rect x="250" y="1010" width="400" height="52" rx="8" fill="url(#grad-process)"/>
+    <text x="450" y="1031" class="node-text">Kalkulasi Metrik Statistik Rekapitulasi</text>
+    <text x="450" y="1049" class="node-subtext">persenMhs, persenDsn, persenUmum, rataRataPendapatan, rataRataDiskon</text>
+  </g>
+
+  <!-- Flow 10 -> 11 -->
+  <path d="M 450 1062 L 450 1090" class="flow-line"/>
+
+  <!-- 11. Evaluasi Kategori Terbanyak (Decision & Branching) -->
+  <g filter="url(#shadow)">
+    <polygon points="450,1090 600,1130 450,1170 300,1130" fill="url(#grad-decision)"/>
+    <text x="450" y="1126" class="node-text">Evaluasi Kategori Terbanyak</text>
+    <text x="450" y="1142" class="node-subtext">(Mhs vs Dosen vs Umum)</text>
+  </g>
+
+  <!-- Branches Evaluasi Kategori Terbanyak -->
+  <!-- Cabang 1: Ketiga Kategori Sama (Seimbang) -->
+  <path d="M 300 1130 L 160 1130 L 160 1190" class="flow-line"/>
+  <text x="180" y="1122" class="branch-label">Mhs=Dsn=Umum</text>
+  <g filter="url(#shadow)">
+    <rect x="80" y="1190" width="160" height="38" rx="6" fill="url(#grad-process)"/>
+    <text x="160" y="1213" class="node-text">Ketiga Kategori Seimbang</text>
+  </g>
+
+  <!-- Cabang 2: Seri 2 Kategori -->
+  <path d="M 450 1170 L 450 1190" class="flow-line"/>
+  <text x="458" y="1182" class="branch-label">Imbang 2 Kat</text>
+  <g filter="url(#shadow)">
+    <rect x="360" y="1190" width="180" height="38" rx="6" fill="url(#grad-process)"/>
+    <text x="450" y="1213" class="node-text">2 Kategori Imbang Terbanyak</text>
+  </g>
+
+  <!-- Cabang 3: 1 Kategori Tertinggi -->
+  <path d="M 600 1130 L 740 1130 L 740 1190" class="flow-line"/>
+  <text x="635" y="1122" class="branch-label">1 Tertinggi Tunggal</text>
+  <g filter="url(#shadow)">
+    <rect x="650" y="1190" width="180" height="38" rx="6" fill="url(#grad-process)"/>
+    <text x="740" y="1213" class="node-text">Mhs / Dosen / Umum</text>
+  </g>
+
+  <!-- Merge evaluasi branches -->
+  <path d="M 160 1228 L 160 1260 L 450 1260" style="stroke: #94a3b8; stroke-width: 2; fill: none;"/>
+  <path d="M 740 1228 L 740 1260 L 450 1260" style="stroke: #94a3b8; stroke-width: 2; fill: none;"/>
+  <path d="M 450 1228 L 450 1285" class="flow-line"/>
+
+  <!-- 12. Tampilkan Laporan Rekapitulasi Lengkap (I/O) -->
+  <g filter="url(#shadow)">
+    <polygon points="210,1285 710,1285 660,1470 160,1470" fill="url(#grad-io)"/>
+    <text x="435" y="1312" class="node-text">Tampilkan Laporan Rekapitulasi Lengkap Modul B:</text>
+    <text x="435" y="1334" class="node-subtext">1. Tabel Jumlah Peserta per Kategori, Persentase &amp; Tarif Satuan</text>
+    <text x="435" y="1352" class="node-subtext">2. Kategori Peserta Terbanyak (Hasil Evaluasi)</text>
+    <text x="435" y="1370" class="node-subtext">3. Rekapitulasi Layanan: Total Early Bird, Sertifikat, Paket Makan</text>
+    <text x="435" y="1388" class="node-subtext">4. Rekapitulasi Keuangan: Total Bruto, Potongan Diskon, Total Pendapatan Netto</text>
+    <text x="435" y="1406" class="node-subtext">5. Statistik: Rata-rata Pendapatan &amp; Diskon per Peserta, Transaksi Terbesar</text>
+    <text x="435" y="1435" class="node-text" style="fill:#fef08a;">Cetak Garis Pemisah &amp; Pesan Selesai</text>
+  </g>
+
+  <!-- Flow 12 -> 13 -->
+  <path d="M 435 1470 L 435 1535" class="flow-line"/>
+
+  <!-- 13. Selesai (Terminator) -->
+  <g filter="url(#shadow)">
+    <rect x="350" y="1535" width="200" height="46" rx="23" fill="url(#grad-end)"/>
+    <text x="450" y="1563" class="node-text">SELESAI</text>
+  </g>
+
+</svg>
+
