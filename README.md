@@ -13,8 +13,8 @@ Program C++ untuk menghitung biaya pendaftaran seminar nasional dan merekap pend
 
 | Nama | NIM | Modul |
 |------|-----|-------|
-| Riflo Ahmad Nendriansyah | — | Modul A |
-| — (isi nama) | — | Modul B |
+| Riflo Ahmad Nendriansyah | 322610018 | Modul A |
+| Praysilia Sifra | 322610010 | Modul B |
 
 ## Struktur Repository
 
@@ -30,23 +30,36 @@ seminar-nasional-uts/
 ├── assets/
 │   ├── css/style.css
 │   ├── flowchart/
+│   │   ├── flowchart-modul-a.svg
+│   │   └── flowchart-modul-b.svg
 │   └── screenshot/
 ├── src/
 │   ├── modul_a.cpp
 │   ├── modul_b.cpp
 │   └── seminar_final.cpp
 └── docs/
-    └── pseudocode-modul-a.txt
+    ├── pseudocode-modul-a.txt
+    └── pseudocode-modul-b.txt
 ```
 
 ## Cara Menjalankan Program
 
+### Modul A (Proses Utama)
 ```bash
 # Compile Modul A
 g++ -o modul_a src/modul_a.cpp -std=c++17
 
 # Jalankan
 ./modul_a
+```
+
+### Modul B (Rekapitulasi)
+```bash
+# Compile Modul B
+g++ -o modul_b src/modul_b.cpp -std=c++17
+
+# Jalankan
+./modul_b
 ```
 
 ## GitHub Pages

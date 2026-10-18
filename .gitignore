@@ -1,1 +1,9 @@
-﻿*.exe
+*.exe
+*.out
+*.o
+modul_a
+modul_b
+seminar_final
+src/modul_a
+src/modul_b
+src/seminar_final

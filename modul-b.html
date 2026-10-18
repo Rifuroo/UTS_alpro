@@ -1,63 +1,1115 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modul B — Rekapitulasi | Seminar Nasional SSI1144</title>
+  <title>Modul B — Rekapitulasi &amp; Statistik | Seminar Nasional SSI1144</title>
+  <meta name="description"
+    content="Modul B: Proses rekapitulasi data pendaftaran seminar nasional, evaluasi kategori peserta terbanyak, analisis finansial akumulatif, pseudocode, flowchart, source code C++, dan pengujian komprehensif.">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
-<div class="shell">
-  <header class="topbar">
-    <a href="index.html" class="topbar-brand">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-      Seminar Nasional <span class="topbar-badge">SSI1144</span>
-    </a>
-    <button class="hamburger" id="hamburger">&#9776;</button>
-  </header>
-  <nav class="sidebar" id="sidebar">
-    <div class="sidebar-section">
-      <div class="sidebar-label">Halaman Utama</div>
-      <ul class="sidebar-nav">
-        <li><a href="index.html">Beranda</a></li>
-        <li><a href="analisis.html">Analisis Masalah</a></li>
-      </ul>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-label">Modul Program</div>
-      <ul class="sidebar-nav">
-        <li><a href="modul-a.html">Modul A</a></li>
-        <li><a href="modul-b.html" class="active">Modul B</a></li>
-        <li><a href="integrasi.html">Program Terintegrasi</a></li>
-      </ul>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-label">Dokumentasi</div>
-      <ul class="sidebar-nav">
-        <li><a href="refleksi.html">Refleksi</a></li>
-        <li><a href="pernyataan-ai.html">Pernyataan AI</a></li>
-      </ul>
-    </div>
-  </nav>
-  <main>
-    <div class="page-header">
-      <div class="page-tag">Modul B · Rekapitulasi</div>
-      <h1 class="page-title">Modul B — Rekapitulasi</h1>
-      <p class="page-desc">Halaman ini sedang dalam pengerjaan.</p>
-    </div>
-    <div class="callout callout-warn">
-      <span>Konten halaman ini akan ditambahkan sesuai tahapan pengerjaan proyek.</span>
-    </div>
-  </main>
-  <footer>
-    <span>SSI1144 · Algoritma dan Pengantar Pemrograman · Universitas Ma Chung</span>
-    <span>Studi Kasus 07 · Sistem Pendaftaran Seminar Nasional</span>
-  </footer>
-</div>
-<script>
-  const h = document.getElementById('hamburger'), s = document.getElementById('sidebar');
-  h.addEventListener('click', () => s.classList.toggle('open'));
-  document.addEventListener('click', e => { if (!s.contains(e.target) && !h.contains(e.target)) s.classList.remove('open'); });
-</script>
+  <div class="shell">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <a href="index.html" class="topbar-brand">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+        </svg>
+        Seminar Nasional
+        <span class="topbar-badge">SSI1144</span>
+      </a>
+      <div class="topbar-right">
+        <a href="https://github.com/Rifuroo/UTS_alpro" class="topbar-link" target="_blank" rel="noopener">GitHub Repo</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Buka menu">&#9776;</button>
+    </header>
+
+    <!-- SIDEBAR -->
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">Halaman Utama</div>
+        <ul class="sidebar-nav">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="analisis.html">Analisis Masalah</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">Modul Program</div>
+        <ul class="sidebar-nav">
+          <li><a href="modul-a.html">Modul A</a></li>
+          <li><a href="modul-b.html" class="active">Modul B</a></li>
+          <li><a href="integrasi.html">Program Terintegrasi</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">Dokumentasi</div>
+        <ul class="sidebar-nav">
+          <li><a href="refleksi.html">Refleksi</a></li>
+          <li><a href="pernyataan-ai.html">Pernyataan AI</a></li>
+        </ul>
+      </div>
+
+      <!-- On-page anchor nav -->
+      <div class="sidebar-section">
+        <div class="sidebar-label">Di Halaman Ini</div>
+        <ul class="sidebar-nav">
+          <li><a href="#penanggung-jawab">Penanggung Jawab</a></li>
+          <li><a href="#algoritma">Algoritma Deskriptif</a></li>
+          <li><a href="#pseudocode">Pseudocode</a></li>
+          <li><a href="#flowchart">Flowchart</a></li>
+          <li><a href="#source-code">Source Code</a></li>
+          <li><a href="#penjelasan">Penjelasan Kode</a></li>
+          <li><a href="#hasil-eksekusi">Hasil Eksekusi</a></li>
+          <li><a href="#pengujian">Tabel Pengujian</a></li>
+          <li><a href="#trace">Trace Table</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main>
+      <div class="page-header">
+        <div class="page-tag">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+          </svg>
+          Modul B · Rekapitulasi &amp; Statistik
+        </div>
+        <h1 class="page-title">Rekapitulasi Kegiatan &amp;<br>Statistik Seminar Nasional</h1>
+        <p class="page-desc">Modul B bertanggung jawab mengumpulkan dan mengakumulasi data pendaftaran dari seluruh peserta, menghitung distribusi kategori, menentukan kategori peserta terbanyak (termasuk penanganan kondisi imbang/seri), serta merekapitulasi arus finansial pendapatan seminar.</p>
+      </div>
+
+      <!-- ===== PENANGGUNG JAWAB ===== -->
+      <section id="penanggung-jawab">
+        <h2>Penanggung Jawab</h2>
+        <div class="card">
+          <table style="border:none; margin:0;">
+            <tr>
+              <td style="border:none; padding:6px 16px 6px 0; color:var(--text-sub); width:140px;">Nama</td>
+              <td style="border:none; padding:6px 0; color:var(--text); font-weight:600;">Praysilia Sifra</td>
+            </tr>
+            <tr>
+              <td style="border:none; padding:6px 16px 6px 0; color:var(--text-sub);">NIM</td>
+              <td style="border:none; padding:6px 0; color:var(--text); font-weight:600;">322610010</td>
+            </tr>
+            <tr>
+              <td style="border:none; padding:6px 16px 6px 0; color:var(--text-sub);">Tanggung Jawab</td>
+              <td style="border:none; padding:6px 0;"><span class="badge badge-purple">Modul B · Rekapitulasi &amp; Analisis Statistik</span></td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===== ALGORITMA DESKRIPTIF ===== -->
+      <section id="algoritma">
+        <h2>Algoritma Deskriptif</h2>
+        <ol class="steps">
+          <li><strong>Inisialisasi Sistem:</strong>
+            <p style="margin-top:4px; color:var(--text-sub);">Tampilkan header program Modul B dan inisialisasi seluruh variabel akumulator dengan nilai awal 0 (penghitung kategori mahasiswa, dosen, umum; early bird; diskon kelompok; sertifikat fisik; paket konsumsi; total bruto; total diskon; total pendapatan bersih; dan pelacak transaksi terbesar). Set variabel kontrol perulangan <code>lanjut = 'Y'</code> dan penomoran <code>nomorUrut = 1</code>.</p>
+          </li>
+          <li><strong>Perulangan Input Transaksi (Loop Utama):</strong>
+            <p style="margin-top:4px; color:var(--text-sub);">Selama <code>lanjut == 'Y'</code>, lakukan pemrosesan setiap data pendaftaran peserta:</p>
+            <ol style="margin-top:8px; padding-left:20px; color:var(--text-sub);">
+              <li style="margin-bottom:4px;">Tampilkan label transaksi pendaftaran ke-<code>nomorUrut</code>.</li>
+              <li style="margin-bottom:4px;"><strong>Validasi Nama:</strong> Minta input nama peserta. Ulangi jika nama kosong atau hanya berisi spasi.</li>
+              <li style="margin-bottom:4px;"><strong>Validasi Kategori:</strong> Baca kategori numerik (1 = Mahasiswa, 2 = Dosen, 3 = Umum). Ulangi jika bukan 1, 2, atau 3.</li>
+              <li style="margin-bottom:4px;"><strong>Validasi Early Bird:</strong> Baca status early bird ('Y' / 'T'). Ulangi jika selain keduanya.</li>
+              <li style="margin-bottom:4px;"><strong>Validasi Jumlah Anggota:</strong> Baca kuantitas rombongan. Ulangi jika bernilai &le; 0.</li>
+              <li style="margin-bottom:4px;"><strong>Validasi Opsi Tambahan:</strong> Baca pemesanan sertifikat cetak ('Y'/'T') dan paket konsumsi ('Y'/'T').</li>
+              <li style="margin-bottom:4px;"><strong>Kalkulasi Tagihan Peserta:</strong>
+                Hitung tarif dasar berdasarkan kategori, hitung diskon Early Bird (20% dari tarif dasar), hitung diskon rombongan kelompok (10% dari tarif setelah EB jika anggota &ge; 5 orang), dan tambahkan biaya opsional sertifikat cetak (Rp20.000) serta paket konsumsi (Rp35.000) tanpa pemotongan diskon.
+              </li>
+              <li style="margin-bottom:4px;"><strong>Akumulasi Rekapitulasi:</strong>
+                Tambahkan 1 ke counter kategori bersangkutan (<code>totalPesertaMahasiswa</code>, <code>totalPesertaDosen</code>, atau <code>totalPesertaUmum</code>).
+                Jika peserta early bird, tambahkan <code>totalEarlyBird</code>.
+                Jika rombongan &ge; 5, tambahkan <code>totalKelompokDiskon</code>.
+                Jika memesan sertifikat atau makan, tambahkan counter kuantitas dan akumulasi biayanya.
+                Tambahkan nominal diskon ke <code>totalDiskon</code> dan nominal tagihan ke <code>totalPendapatan</code>.
+              </li>
+              <li style="margin-bottom:4px;"><strong>Pembaruan Rekor Transaksi Terbesar:</strong>
+                Periksa apakah <code>tagihanPeserta &gt; tagihanTerbesar</code>. Jika ya, simpan nilai tagihan, nama peserta, dan nomor transaksi saat ini sebagai rekor terbaru.
+              </li>
+              <li style="margin-bottom:4px;">Cetak notifikasi konfirmasi bahwa transaksi berhasil dicatat ke variabel akumulator.</li>
+              <li style="margin-bottom:4px;">Tambah <code>nomorUrut</code> dengan 1, lalu tanyakan kepada operator apakah ingin menginput peserta lain (<code>bacaYaaTidak</code>).</li>
+            </ol>
+          </li>
+          <li><strong>Proses Rekapitulasi &amp; Analisis Statistik Akhir:</strong>
+            <p style="margin-top:4px; color:var(--text-sub);">Setelah operator memilih keluar dari loop (<code>lanjut == 'T'</code>), hitung total pendaftar: <code>totalPeserta = totalPesertaMahasiswa + totalPesertaDosen + totalPesertaUmum</code>.</p>
+            <ol style="margin-top:8px; padding-left:20px; color:var(--text-sub);">
+              <li style="margin-bottom:4px;"><strong>Pencegahan Division-by-Zero:</strong> Jika <code>totalPeserta == 0</code>, cetak pesan bahwa belum ada transaksi yang dicatat dan akhiri program secara aman.</li>
+              <li style="margin-bottom:4px;"><strong>Kalkulasi Persentase:</strong> Hitung persentase peserta mahasiswa, dosen, dan umum terhadap total pendaftar.</li>
+              <li style="margin-bottom:4px;"><strong>Kalkulasi Rata-rata:</strong> Hitung rata-rata penerimaan pendapatan per peserta dan rata-rata potongan diskon per peserta.</li>
+              <li style="margin-bottom:4px;"><strong>Evaluasi Percabangan Kategori Terbanyak:</strong>
+                Uji kondisi logika untuk menentukan kategori dominan:
+                <ul>
+                  <li>Jika Mhs == Dsn dan Dsn == Umum &rarr; <em>Ketiga kategori seimbang</em>.</li>
+                  <li>Jika Mhs == Dsn dan Mhs &gt; Umum &rarr; <em>Mahasiswa &amp; Dosen imbang terbanyak</em>.</li>
+                  <li>Jika Mhs == Umum dan Mhs &gt; Dsn &rarr; <em>Mahasiswa &amp; Umum imbang terbanyak</em>.</li>
+                  <li>Jika Dsn == Umum dan Dsn &gt; Mhs &rarr; <em>Dosen &amp; Umum imbang terbanyak</em>.</li>
+                  <li>Jika Mhs &gt; Dsn dan Mhs &gt; Umum &rarr; <em>Mahasiswa terbanyak tunggal</em>.</li>
+                  <li>Jika Dsn &gt; Mhs dan Dsn &gt; Umum &rarr; <em>Dosen terbanyak tunggal</em>.</li>
+                  <li>Selain itu &rarr; <em>Umum terbanyak tunggal</em>.</li>
+                </ul>
+              </li>
+            </ol>
+          </li>
+          <li><strong>Penyajian Laporan Akhir:</strong>
+            <p style="margin-top:4px; color:var(--text-sub);">Tampilkan laporan tabel rekapitulasi komprehensif yang memuat rincian kuantitas per kategori beserta persentasenya, kesimpulan kategori peserta terbanyak, ringkasan pemesanan layanan tambahan, tabel keuangan (bruto, diskon, netto), rata-rata transaksi, dan detail transaksi tertinggi.</p>
+          </li>
+          <li>Program selesai dengan sukses.</li>
+        </ol>
+      </section>
+
+      <!-- ===== PSEUDOCODE ===== -->
+      <section id="pseudocode">
+        <h2>Pseudocode</h2>
+        <div class="code-block">
+          <div class="code-header">
+            <span class="code-lang">PSEUDOCODE</span>
+            <span class="code-filename">docs/pseudocode-modul-b.txt</span>
+            <button class="code-copy-btn" onclick="copyCode(this)">Salin</button>
+          </div>
+          <pre><code>PROGRAM SistemRekapitulasiSeminar_ModulB
+
+KONSTANTA:
+  TARIF_MAHASISWA      = 75000
+  TARIF_DOSEN          = 125000
+  TARIF_UMUM           = 175000
+  DISKON_EARLY_BIRD    = 0.20
+  DISKON_KELOMPOK      = 0.10
+  MIN_ANGGOTA_KELOMPOK = 5
+  BIAYA_SERTIFIKAT     = 20000
+  BIAYA_MAKAN          = 35000
+
+VARIABEL AKUMULATOR:
+  totalPesertaMahasiswa, totalPesertaDosen, totalPesertaUmum : INTEGER = 0
+  totalEarlyBird, totalKelompokDiskon                        : INTEGER = 0
+  totalSertifikat, totalMakan                                : INTEGER = 0
+  totalBruto, totalDiskonEB, totalDiskonKelompok             : REAL    = 0.0
+  totalDiskon, totalPendapatan                               : REAL    = 0.0
+  tagihanTerbesar                                            : REAL    = 0.0
+  namaPesertaTerbesar                                        : STRING  = "-"
+  nomorUrutTerbesar                                          : INTEGER = 0
+
+VARIABEL KONTROL &amp; INPUT:
+  nomorUrut : INTEGER = 1
+  lanjut    : KARAKTER = 'Y'
+  namaPeserta, statusEB, statusSertif, statusMakan : STRING/KARAKTER
+  kategori, jumlahAnggota                          : INTEGER
+  earlyBird, kelompok, pesanSertif, pesanMakan     : BOOLEAN
+
+MULAI
+  Tampilkan Header Modul B
+
+  SELAMA lanjut = 'Y' KERJAKAN
+    Tampilkan "INPUT TRANSAKSI #" + nomorUrut
+
+    ULANGI Baca namaPeserta SAMPAI namaPeserta != ""
+    ULANGI Baca kategori SAMPAI kategori TermasukDalam {1, 2, 3}
+    ULANGI Baca statusEB SAMPAI statusEB TermasukDalam {'Y', 'T'}
+    earlyBird &lt;- (statusEB = 'Y')
+    ULANGI Baca jumlahAnggota SAMPAI jumlahAnggota &gt; 0
+    kelompok &lt;- (jumlahAnggota &gt;= MIN_ANGGOTA_KELOMPOK)
+    ULANGI Baca statusSertif SAMPAI statusSertif TermasukDalam {'Y', 'T'}
+    pesanSertif &lt;- (statusSertif = 'Y')
+    ULANGI Baca statusMakan SAMPAI statusMakan TermasukDalam {'Y', 'T'}
+    pesanMakan &lt;- (statusMakan = 'Y')
+
+    // Hitung tagihan peserta
+    JIKA kategori = 1 MAKA tarif &lt;- TARIF_MAHASISWA
+    SELAIN JIKA kategori = 2 MAKA tarif &lt;- TARIF_DOSEN
+    SELAIN tarif &lt;- TARIF_UMUM
+
+    nominalEB &lt;- 0.0
+    JIKA earlyBird MAKA nominalEB &lt;- tarif * DISKON_EARLY_BIRD
+    tarifSetelahEB &lt;- tarif - nominalEB
+
+    nominalKlp &lt;- 0.0
+    JIKA kelompok MAKA nominalKlp &lt;- tarifSetelahEB * DISKON_KELOMPOK
+    tarifBersih &lt;- tarifSetelahEB - nominalKlp
+
+    biayaTambahan &lt;- 0.0
+    JIKA pesanSertif MAKA biayaTambahan &lt;- biayaTambahan + BIAYA_SERTIFIKAT
+    JIKA pesanMakan  MAKA biayaTambahan &lt;- biayaTambahan + BIAYA_MAKAN
+
+    diskonPeserta  &lt;- nominalEB + nominalKlp
+    tagihanPeserta &lt;- tarifBersih + biayaTambahan
+
+    // Akumulasi data rekapitulasi
+    JIKA kategori = 1 MAKA totalPesertaMahasiswa &lt;- totalPesertaMahasiswa + 1
+    SELAIN JIKA kategori = 2 MAKA totalPesertaDosen &lt;- totalPesertaDosen + 1
+    SELAIN totalPesertaUmum &lt;- totalPesertaUmum + 1
+
+    JIKA earlyBird   MAKA totalEarlyBird &lt;- totalEarlyBird + 1
+    JIKA kelompok    MAKA totalKelompokDiskon &lt;- totalKelompokDiskon + 1
+    JIKA pesanSertif MAKA totalSertifikat &lt;- totalSertifikat + 1
+    JIKA pesanMakan  MAKA totalMakan &lt;- totalMakan + 1
+
+    totalBruto      &lt;- totalBruto + (tarif + biayaTambahan)
+    totalDiskon     &lt;- totalDiskon + diskonPeserta
+    totalPendapatan &lt;- totalPendapatan + tagihanPeserta
+
+    // Pelacak transaksi tertinggi
+    JIKA tagihanPeserta &gt; tagihanTerbesar MAKA
+      tagihanTerbesar     &lt;- tagihanPeserta
+      namaPesertaTerbesar &lt;- namaPeserta
+      nomorUrutTerbesar   &lt;- nomorUrut
+    AKHIR JIKA
+
+    nomorUrut &lt;- nomorUrut + 1
+    ULANGI Baca lanjut SAMPAI lanjut TermasukDalam {'Y', 'T'}
+  AKHIR SELAMA
+
+  totalPeserta &lt;- totalPesertaMahasiswa + totalPesertaDosen + totalPesertaUmum
+
+  JIKA totalPeserta = 0 MAKA
+    Tampilkan "Tidak ada data transaksi yang dicatat."
+  SELAIN
+    persenMhs  &lt;- (totalPesertaMahasiswa / totalPeserta) * 100
+    persenDsn  &lt;- (totalPesertaDosen / totalPeserta) * 100
+    persenUmum &lt;- (totalPesertaUmum / totalPeserta) * 100
+    rataRataPendapatan &lt;- totalPendapatan / totalPeserta
+
+    // Penentuan kategori terbanyak (Tie-breaking logic)
+    JIKA (totalPesertaMahasiswa = totalPesertaDosen) DAN (totalPesertaDosen = totalPesertaUmum) MAKA
+      kategoriTerbanyak &lt;- "Ketiga kategori seimbang"
+    SELAIN JIKA (totalPesertaMahasiswa = totalPesertaDosen) DAN (totalPesertaMahasiswa &gt; totalPesertaUmum) MAKA
+      kategoriTerbanyak &lt;- "Mahasiswa &amp; Dosen (Imbang terbanyak)"
+    SELAIN JIKA (totalPesertaMahasiswa = totalPesertaUmum) DAN (totalPesertaMahasiswa &gt; totalPesertaDosen) MAKA
+      kategoriTerbanyak &lt;- "Mahasiswa &amp; Umum (Imbang terbanyak)"
+    SELAIN JIKA (totalPesertaDosen = totalPesertaUmum) DAN (totalPesertaDosen &gt; totalPesertaMahasiswa) MAKA
+      kategoriTerbanyak &lt;- "Dosen &amp; Umum (Imbang terbanyak)"
+    SELAIN JIKA (totalPesertaMahasiswa &gt; totalPesertaDosen) DAN (totalPesertaMahasiswa &gt; totalPesertaUmum) MAKA
+      kategoriTerbanyak &lt;- "Mahasiswa"
+    SELAIN JIKA (totalPesertaDosen &gt; totalPesertaMahasiswa) DAN (totalPesertaDosen &gt; totalPesertaUmum) MAKA
+      kategoriTerbanyak &lt;- "Dosen"
+    SELAIN
+      kategoriTerbanyak &lt;- "Umum"
+    AKHIR JIKA
+
+    Tampilkan Laporan Rekapitulasi Kategori, Persentase, dan Kategori Terbanyak
+    Tampilkan Rekapitulasi Layanan Tambahan (EB, Sertifikat, Makan)
+    Tampilkan Rekapitulasi Keuangan (Bruto, Diskon, Netto, Rata-rata, Transaksi Terbesar)
+  AKHIR JIKA
+SELESAI</code></pre>
+        </div>
+      </section>
+
+      <!-- ===== FLOWCHART ===== -->
+      <section id="flowchart">
+        <h2>Flowchart Modul B</h2>
+        <div class="flowchart-wrap" id="flowchart-container"
+          style="background:#0f172a; border-radius:12px; padding:20px; border:1px solid var(--border); text-align:center;">
+          <img src="assets/flowchart/flowchart-modul-b.svg"
+            alt="Diagram Flowchart Modul B - Rekapitulasi Pendaftaran Seminar Nasional"
+            style="max-width:100%; height:auto; display:inline-block; border-radius:8px;">
+        </div>
+      </section>
+
+      <!-- ===== SOURCE CODE ===== -->
+      <section id="source-code">
+        <h2>Source Code C++ Modul B</h2>
+        <div class="code-block">
+          <div class="code-header">
+            <span class="code-lang">C++</span>
+            <span class="code-filename">src/modul_b.cpp</span>
+            <button class="code-copy-btn" onclick="copyCode(this)">Salin</button>
+          </div>
+          <pre><code><span class="pp">#include</span> <span class="st">&lt;iostream&gt;</span>
+<span class="pp">#include</span> <span class="st">&lt;string&gt;</span>
+<span class="pp">#include</span> <span class="st">&lt;iomanip&gt;</span>
+<span class="pp">#include</span> <span class="st">&lt;cmath&gt;</span>
+<span class="pp">#include</span> <span class="st">&lt;sstream&gt;</span>
+
+<span class="kw">using namespace</span> <span class="nc">std</span>;
+
+<span class="cm">// ---- Konstanta tarif dasar ----</span>
+<span class="kw">const</span> <span class="ty">double</span> <span class="nc">TARIF_MAHASISWA</span>      = <span class="nu">75000.0</span>;
+<span class="kw">const</span> <span class="ty">double</span> <span class="nc">TARIF_DOSEN</span>          = <span class="nu">125000.0</span>;
+<span class="kw">const</span> <span class="ty">double</span> <span class="nc">TARIF_UMUM</span>           = <span class="nu">175000.0</span>;
+
+<span class="cm">// ---- Konstanta diskon ----</span>
+<span class="kw">const</span> <span class="ty">double</span> <span class="nc">DISKON_EARLY_BIRD</span>    = <span class="nu">0.20</span>;
+<span class="kw">const</span> <span class="ty">double</span> <span class="nc">DISKON_KELOMPOK</span>      = <span class="nu">0.10</span>;
+<span class="kw">const</span> <span class="ty">int</span>    <span class="nc">MIN_ANGGOTA_KELOMPOK</span> = <span class="nu">5</span>;
+
+<span class="cm">// ---- Konstanta biaya tambahan ----</span>
+<span class="kw">const</span> <span class="ty">double</span> <span class="nc">BIAYA_SERTIFIKAT</span>     = <span class="nu">20000.0</span>;
+<span class="kw">const</span> <span class="ty">double</span> <span class="nc">BIAYA_MAKAN</span>          = <span class="nu">35000.0</span>;
+
+<span class="cm">// Fungsi bantu baca &amp; validasi string</span>
+<span class="ty">string</span> <span class="fn">bacaBaris</span>(<span class="kw">const</span> <span class="ty">string</span> &amp;p) {
+    <span class="ty">string</span> b; cout &lt;&lt; p; getline(cin, b);
+    <span class="kw">while</span> (!b.empty() &amp;&amp; (b.back() == <span class="st">' '</span> || b.back() == <span class="st">'\r'</span>)) b.pop_back();
+    <span class="ty">size_t</span> m = b.find_first_not_of(<span class="st">' '</span>);
+    <span class="kw">return</span> (m == <span class="ty">string</span>::npos) ? <span class="st">""</span> : b.substr(m);
+}
+
+<span class="ty">string</span> <span class="fn">bacaNama</span>(<span class="kw">const</span> <span class="ty">string</span> &amp;p) {
+    <span class="kw">while</span> (<span class="kw">true</span>) {
+        <span class="ty">string</span> n = <span class="fn">bacaBaris</span>(p);
+        <span class="kw">if</span> (!n.empty()) <span class="kw">return</span> n;
+        cout &lt;&lt; <span class="st">"  [!] Nama tidak boleh kosong. Silakan coba lagi.\n"</span>;
+    }
+}
+
+<span class="ty">bool</span> <span class="fn">konversiInt</span>(<span class="kw">const</span> <span class="ty">string</span> &amp;teks, <span class="ty">int</span> &amp;hasil) {
+    <span class="kw">if</span> (teks.empty()) <span class="kw">return false</span>;
+    istringstream ss(teks); <span class="ty">int</span> v; <span class="ty">char</span> rem;
+    <span class="kw">return</span> (ss &gt;&gt; v &amp;&amp; !(ss &gt;&gt; rem)) ? (hasil = v, <span class="kw">true</span>) : <span class="kw">false</span>;
+}
+
+<span class="ty">char</span> <span class="fn">bacaYaaTidak</span>(<span class="kw">const</span> <span class="ty">string</span> &amp;p) {
+    <span class="kw">while</span> (<span class="kw">true</span>) {
+        <span class="ty">string</span> b = <span class="fn">bacaBaris</span>(p);
+        <span class="kw">if</span> (b.length() == <span class="nu">1</span>) {
+            <span class="ty">char</span> c = toupper(b[<span class="nu">0</span>]);
+            <span class="kw">if</span> (c == <span class="st">'Y'</span> || c == <span class="st">'T'</span>) <span class="kw">return</span> c;
+        }
+        cout &lt;&lt; <span class="st">"  [!] Input tidak valid. Harap ketik Y atau T.\n"</span>;
+    }
+}
+
+<span class="ty">int</span> <span class="fn">bacaIntPositif</span>(<span class="kw">const</span> <span class="ty">string</span> &amp;p) {
+    <span class="kw">while</span> (<span class="kw">true</span>) {
+        <span class="ty">string</span> b = <span class="fn">bacaBaris</span>(p); <span class="ty">int</span> v;
+        <span class="kw">if</span> (<span class="fn">konversiInt</span>(b, v) &amp;&amp; v &gt; <span class="nu">0</span>) <span class="kw">return</span> v;
+        cout &lt;&lt; <span class="st">"  [!] Input tidak valid. Masukkan bilangan bulat positif (&gt;0).\n"</span>;
+    }
+}
+
+<span class="ty">int</span> <span class="fn">bacaKategori</span>() {
+    <span class="kw">while</span> (<span class="kw">true</span>) {
+        <span class="ty">string</span> b = <span class="fn">bacaBaris</span>(<span class="st">"  Kategori (1=Mahasiswa, 2=Dosen, 3=Umum) : "</span>);
+        <span class="ty">int</span> v;
+        <span class="kw">if</span> (<span class="fn">konversiInt</span>(b, v) &amp;&amp; (v == <span class="nu">1</span> || v == <span class="nu">2</span> || v == <span class="nu">3</span>)) <span class="kw">return</span> v;
+        cout &lt;&lt; <span class="st">"  [!] Pilihan kategori tidak valid. Pilih 1, 2, atau 3.\n"</span>;
+    }
+}
+
+<span class="cm">// Evaluasi Kategori Peserta Terbanyak (Mencakup Kondisi Seri)</span>
+<span class="ty">string</span> <span class="fn">evaluasiKategoriTerbanyak</span>(<span class="ty">int</span> mhs, <span class="ty">int</span> dsn, <span class="ty">int</span> umum) {
+    <span class="kw">if</span> (mhs == <span class="nu">0</span> &amp;&amp; dsn == <span class="nu">0</span> &amp;&amp; umum == <span class="nu">0</span>) <span class="kw">return</span> <span class="st">"Belum ada data pendaftar"</span>;
+    <span class="kw">if</span> (mhs == dsn &amp;&amp; dsn == umum)
+        <span class="kw">return</span> <span class="st">"Ketiga kategori seimbang ("</span> + to_string(mhs) + <span class="st">" peserta tiap kategori)"</span>;
+    <span class="kw">if</span> (mhs == dsn &amp;&amp; mhs &gt; umum)
+        <span class="kw">return</span> <span class="st">"Mahasiswa &amp; Dosen (Imbang terbanyak: "</span> + to_string(mhs) + <span class="st">" peserta)"</span>;
+    <span class="kw">if</span> (mhs == umum &amp;&amp; mhs &gt; dsn)
+        <span class="kw">return</span> <span class="st">"Mahasiswa &amp; Umum (Imbang terbanyak: "</span> + to_string(mhs) + <span class="st">" peserta)"</span>;
+    <span class="kw">if</span> (dsn == umum &amp;&amp; dsn &gt; mhs)
+        <span class="kw">return</span> <span class="st">"Dosen &amp; Umum (Imbang terbanyak: "</span> + to_string(dsn) + <span class="st">" peserta)"</span>;
+    <span class="kw">if</span> (mhs &gt; dsn &amp;&amp; mhs &gt; umum)
+        <span class="kw">return</span> <span class="st">"Mahasiswa ("</span> + to_string(mhs) + <span class="st">" peserta)"</span>;
+    <span class="kw">if</span> (dsn &gt; mhs &amp;&amp; dsn &gt; umum)
+        <span class="kw">return</span> <span class="st">"Dosen ("</span> + to_string(dsn) + <span class="st">" peserta)"</span>;
+    <span class="kw">return</span> <span class="st">"Umum ("</span> + to_string(umum) + <span class="st">" peserta)"</span>;
+}
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="cm">// Inisialisasi Akumulator Modul B</span>
+    <span class="ty">int</span>    totalPesertaMahasiswa = <span class="nu">0</span>, totalPesertaDosen = <span class="nu">0</span>, totalPesertaUmum = <span class="nu">0</span>;
+    <span class="ty">int</span>    totalEarlyBird = <span class="nu">0</span>, totalKelompokDiskon = <span class="nu">0</span>, totalSertifikat = <span class="nu">0</span>, totalMakan = <span class="nu">0</span>;
+    <span class="ty">double</span> totalBruto = <span class="nu">0.0</span>, totalDiskonEB = <span class="nu">0.0</span>, totalDiskonKelompok = <span class="nu">0.0</span>;
+    <span class="ty">double</span> totalDiskon = <span class="nu">0.0</span>, totalPendapatan = <span class="nu">0.0</span>;
+    <span class="ty">double</span> tagihanTerbesar = <span class="nu">0.0</span>;
+    <span class="ty">string</span> namaPesertaTerbesar = <span class="st">"-"</span>;
+    <span class="ty">int</span>    nomorUrutTerbesar = <span class="nu">0</span>, nomorUrut = <span class="nu">1</span>;
+    <span class="ty">char</span>   lanjut = <span class="st">'Y'</span>;
+
+    <span class="kw">while</span> (lanjut == <span class="st">'Y'</span>) {
+        <span class="ty">string</span> namaPeserta   = <span class="fn">bacaNama</span>(<span class="st">"  Nama peserta               : "</span>);
+        <span class="ty">int</span>    kategori      = <span class="fn">bacaKategori</span>();
+        <span class="ty">bool</span>   earlyBird     = (<span class="fn">bacaYaaTidak</span>(<span class="st">"  Status Early Bird? (Y/T)   : "</span>) == <span class="st">'Y'</span>);
+        <span class="ty">int</span>    jumlahAnggota = <span class="fn">bacaIntPositif</span>(<span class="st">"  Jumlah anggota rombongan   : "</span>);
+        <span class="ty">bool</span>   kelompok      = (jumlahAnggota &gt;= <span class="nc">MIN_ANGGOTA_KELOMPOK</span>);
+        <span class="ty">bool</span>   pesanSertif   = (<span class="fn">bacaYaaTidak</span>(<span class="st">"  Pesan sertifikat? (Y/T)    : "</span>) == <span class="st">'Y'</span>);
+        <span class="ty">bool</span>   pesanMakan    = (<span class="fn">bacaYaaTidak</span>(<span class="st">"  Pesan paket makan? (Y/T)   : "</span>) == <span class="st">'Y'</span>);
+
+        <span class="ty">double</span> tarif = (kategori == <span class="nu">1</span>) ? <span class="nc">TARIF_MAHASISWA</span> : ((kategori == <span class="nu">2</span>) ? <span class="nc">TARIF_DOSEN</span> : <span class="nc">TARIF_UMUM</span>);
+        <span class="ty">double</span> nominalEB = earlyBird ? (tarif * <span class="nc">DISKON_EARLY_BIRD</span>) : <span class="nu">0.0</span>;
+        <span class="ty">double</span> tarifSetelahEB = tarif - nominalEB;
+        <span class="ty">double</span> nominalKlp = kelompok ? (tarifSetelahEB * <span class="nc">DISKON_KELOMPOK</span>) : <span class="nu">0.0</span>;
+        <span class="ty">double</span> tarifBersih = tarifSetelahEB - nominalKlp;
+        <span class="ty">double</span> biayaTambahan = (pesanSertif ? <span class="nc">BIAYA_SERTIFIKAT</span> : <span class="nu">0.0</span>) + (pesanMakan ? <span class="nc">BIAYA_MAKAN</span> : <span class="nu">0.0</span>);
+        <span class="ty">double</span> diskonPeserta = nominalEB + nominalKlp;
+        <span class="ty">double</span> tagihanPeserta = tarifBersih + biayaTambahan;
+
+        <span class="cm">// Akumulasi data Modul B</span>
+        <span class="kw">if</span> (kategori == <span class="nu">1</span>)      totalPesertaMahasiswa++;
+        <span class="kw">else if</span> (kategori == <span class="nu">2</span>) totalPesertaDosen++;
+        <span class="kw">else</span>                    totalPesertaUmum++;
+
+        <span class="kw">if</span> (earlyBird)   totalEarlyBird++;
+        <span class="kw">if</span> (kelompok)    totalKelompokDiskon++;
+        <span class="kw">if</span> (pesanSertif) totalSertifikat++;
+        <span class="kw">if</span> (pesanMakan)  totalMakan++;
+
+        totalBruto          += (tarif + biayaTambahan);
+        totalDiskonEB       += nominalEB;
+        totalDiskonKelompok += nominalKlp;
+        totalDiskon         += diskonPeserta;
+        totalPendapatan     += tagihanPeserta;
+
+        <span class="kw">if</span> (tagihanPeserta &gt; tagihanTerbesar) {
+            tagihanTerbesar = tagihanPeserta;
+            namaPesertaTerbesar = namaPeserta;
+            nomorUrutTerbesar = nomorUrut;
+        }
+
+        nomorUrut++;
+        lanjut = <span class="fn">bacaYaaTidak</span>(<span class="st">"  Input transaksi pendaftaran berikutnya? (Y/T) : "</span>);
+    }
+
+    <span class="cm">// Laporan Rekapitulasi Akhir</span>
+    <span class="ty">int</span> totalPeserta = totalPesertaMahasiswa + totalPesertaDosen + totalPesertaUmum;
+    <span class="kw">if</span> (totalPeserta &gt; <span class="nu">0</span>) {
+        <span class="ty">double</span> persenMhs = ((<span class="ty">double</span>)totalPesertaMahasiswa / totalPeserta) * <span class="nu">100.0</span>;
+        <span class="ty">double</span> persenDsn = ((<span class="ty">double</span>)totalPesertaDosen / totalPeserta) * <span class="nu">100.0</span>;
+        <span class="ty">double</span> persenUmum = ((<span class="ty">double</span>)totalPesertaUmum / totalPeserta) * <span class="nu">100.0</span>;
+        <span class="ty">string</span> terbanyak = <span class="fn">evaluasiKategoriTerbanyak</span>(totalPesertaMahasiswa, totalPesertaDosen, totalPesertaUmum);
+        <span class="cm">// Cetak tabel keluaran rekapitulasi lengkap...</span>
+    }
+    <span class="kw">return</span> <span class="nu">0</span>;
+}</code></pre>
+        </div>
+      </section>
+
+      <!-- ===== PENJELASAN KODE ===== -->
+      <section id="penjelasan">
+        <h2>Penjelasan Logika &amp; Arsitektur Program</h2>
+
+        <h3>1. Manajemen Variabel Akumulator Rekapitulasi</h3>
+        <div class="card">
+          <p>Sesuai dengan batasan proyek (tanpa array atau database), seluruh data statistik diolah secara <em>online processing</em> (dihitung seketika saat tiap pendaftaran dimasukkan). Variabel akumulator diinisialisasi tepat satu kali di luar loop:</p>
+          <ul style="padding-left:20px; color:var(--text-sub); font-size:13.5px; line-height:2; margin-top:8px;">
+            <li><code>totalPesertaMahasiswa</code>, <code>totalPesertaDosen</code>, <code>totalPesertaUmum</code>: Mencatat frekuensi peserta per kategori.</li>
+            <li><code>totalEarlyBird</code>, <code>totalKelompokDiskon</code>: Mencatat efektivitas program promosi diskon.</li>
+            <li><code>totalSertifikat</code>, <code>totalMakan</code>: Mengontrol kuantitas logistik operasional yang harus disiapkan panitia.</li>
+            <li><code>totalBruto</code>, <code>totalDiskon</code>, <code>totalPendapatan</code>: Mengakumulasikan arus kas finansial kegiatan secara bersih.</li>
+            <li><code>tagihanTerbesar</code>, <code>namaPesertaTerbesar</code>: Menyimpan nilai transaksi maksimum menggunakan pola pembanding <code>if (tagihan &gt; max)</code>.</li>
+          </ul>
+        </div>
+
+        <h3>2. Logika Komprehensif Penentuan Kategori Peserta Terbanyak</h3>
+        <div class="card">
+          <p>Salah satu parameter penting pada Studi Kasus 07 adalah menentukan kategori peserta terbanyak. Program menerapkan percabangan majemuk yang mampu mengenali seluruh skenario, termasuk jika terjadi <strong>kondisi imbang / seri</strong> antar kategori:</p>
+          <div class="table-wrap" style="margin-top:12px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Kondisi Logika</th>
+                  <th>Status Hasil Evaluasi</th>
+                  <th>Keterangan</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>Mhs == Dsn &amp;&amp; Dsn == Umum</code></td>
+                  <td><span class="badge badge-purple">Seimbang Sempurna</span></td>
+                  <td>Ketiga kategori memiliki jumlah pendaftar yang sama banyak.</td>
+                </tr>
+                <tr>
+                  <td><code>Mhs == Dsn &amp;&amp; Mhs &gt; Umum</code></td>
+                  <td><span class="badge badge-blue">Seri Tertinggi (Mhs &amp; Dsn)</span></td>
+                  <td>Mahasiswa dan Dosen berbagi posisi puncak secara berimbang.</td>
+                </tr>
+                <tr>
+                  <td><code>Mhs == Umum &amp;&amp; Mhs &gt; Dsn</code></td>
+                  <td><span class="badge badge-blue">Seri Tertinggi (Mhs &amp; Umum)</span></td>
+                  <td>Mahasiswa dan Umum berbagi posisi puncak secara berimbang.</td>
+                </tr>
+                <tr>
+                  <td><code>Dsn == Umum &amp;&amp; Dsn &gt; Mhs</code></td>
+                  <td><span class="badge badge-blue">Seri Tertinggi (Dsn &amp; Umum)</span></td>
+                  <td>Dosen dan Umum berbagi posisi puncak secara berimbang.</td>
+                </tr>
+                <tr>
+                  <td><code>Mhs &gt; Dsn &amp;&amp; Mhs &gt; Umum</code></td>
+                  <td><span class="badge badge-green">Pemenang Tunggal</span></td>
+                  <td>Kategori Mahasiswa mutlak terbanyak.</td>
+                </tr>
+                <tr>
+                  <td><code>Dsn &gt; Mhs &amp;&amp; Dsn &gt; Umum</code></td>
+                  <td><span class="badge badge-green">Pemenang Tunggal</span></td>
+                  <td>Kategori Dosen mutlak terbanyak.</td>
+                </tr>
+                <tr>
+                  <td><code>Umum &gt; Mhs &amp;&amp; Umum &gt; Dsn</code></td>
+                  <td><span class="badge badge-green">Pemenang Tunggal</span></td>
+                  <td>Kategori Umum mutlak terbanyak.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <h3>3. Pencegahan Pembagian dengan Nol (Division by Zero)</h3>
+        <div class="card">
+          <p>Jika pengguna langsung mengakhiri program sebelum menginput satu pun data (jumlah peserta = 0), operasi pembagian persentase (<code>totalMhs / totalPeserta</code>) atau rata-rata pendapatan akan menyebabkan program <em>crash</em> (floating point exception). Modul B mencegah hal ini dengan percabangan <code>if (totalPeserta == 0)</code> yang langsung memberikan pesan informatif dan keluar secara elegan.</p>
+        </div>
+      </section>
+
+      <!-- ===== HASIL EKSEKUSI ===== -->
+      <section id="hasil-eksekusi">
+        <h2>Hasil Eksekusi Terminal (Modul B Standalone)</h2>
+        <div class="screenshot-wrap">
+          <div class="screenshot-bar">
+            <div class="screenshot-dots">
+              <span class="dot dot-r"></span>
+              <span class="dot dot-y"></span>
+              <span class="dot dot-g"></span>
+            </div>
+            <span>Terminal &mdash; modul_b (Output Eksekusi 3 Transaksi)</span>
+          </div>
+          <div class="screenshot-body">================================================================
+   MODUL B - REKAPITULASI PENDAFTARAN SEMINAR NASIONAL
+   Studi Kasus 07 | SSI1144 Algoritma dan Pengantar Pemrograman
+   Penanggung Jawab : Praysilia Sifra (Modul B)
+================================================================
+
+----------------------------------------------------------------
+  INPUT TRANSAKSI #1
+----------------------------------------------------------------
+  Nama peserta               : Budi Santoso
+  Kategori (1=Mahasiswa, 2=Dosen, 3=Umum) : 1
+  Status Early Bird? (Y/T)   : Y
+  Jumlah anggota rombongan   : 6
+  Pesan sertifikat? (Y/T)    : Y
+  Pesan paket makan? (Y/T)   : Y
+
+  [OK] Data Pendaftaran #1 (Budi Santoso - Mahasiswa) berhasil dicatat.
+       Tagihan: Rp109.000 | Potongan Diskon: Rp21.000
+
+  Input transaksi pendaftaran berikutnya? (Y/T) : Y
+
+----------------------------------------------------------------
+  INPUT TRANSAKSI #2
+----------------------------------------------------------------
+  Nama peserta               : Dr. Hendra
+  Kategori (1=Mahasiswa, 2=Dosen, 3=Umum) : 2
+  Status Early Bird? (Y/T)   : T
+  Jumlah anggota rombongan   : 3
+  Pesan sertifikat? (Y/T)    : T
+  Pesan paket makan? (Y/T)   : T
+
+  [OK] Data Pendaftaran #2 (Dr. Hendra - Dosen) berhasil dicatat.
+       Tagihan: Rp125.000 | Potongan Diskon: Rp0
+
+  Input transaksi pendaftaran berikutnya? (Y/T) : Y
+
+----------------------------------------------------------------
+  INPUT TRANSAKSI #3
+----------------------------------------------------------------
+  Nama peserta               : Siti Rahma
+  Kategori (1=Mahasiswa, 2=Dosen, 3=Umum) : 3
+  Status Early Bird? (Y/T)   : Y
+  Jumlah anggota rombongan   : 5
+  Pesan sertifikat? (Y/T)    : T
+  Pesan paket makan? (Y/T)   : Y
+
+  [OK] Data Pendaftaran #3 (Siti Rahma - Umum) berhasil dicatat.
+       Tagihan: Rp161.000 | Potongan Diskon: Rp49.000
+
+  Input transaksi pendaftaran berikutnya? (Y/T) : T
+
+
+================================================================
+        LAPORAN REKAPITULASI KEGIATAN SEMINAR NASIONAL
+                  PRODUK KELUARAN MODUL B
+================================================================
+
+  [1] REKAPITULASI JUMLAH PESERTA BERDASARKAN KATEGORI
+----------------------------------------------------------------
+  Kategori          Jumlah Peserta  Persentase    Tarif Satuan
+----------------------------------------------------------------
+  1. Mahasiswa      1 orang         33.3%         Rp75.000
+  2. Dosen          1 orang         33.3%         Rp125.000
+  3. Umum           1 orang         33.3%         Rp175.000
+----------------------------------------------------------------
+  TOTAL PESERTA     3 orang         100.0%        -
+----------------------------------------------------------------
+  >> Kategori Peserta Terbanyak : Ketiga kategori seimbang (1 peserta tiap kategori)
+
+  [2] REKAPITULASI LAYANAN DAN BENEFIT TAMBAHAN
+----------------------------------------------------------------
+  - Peserta Early Bird (Diskon 20%)  : 2     orang (66.7%)
+  - Rombongan Diskon Kelompok (>=5)  : 2     transaksi
+  - Pemesan Sertifikat Cetak fisik   : 1     orang (Total: Rp20.000)
+  - Pemesan Paket Makan / Konsumsi   : 2     orang (Total: Rp70.000)
+
+  [3] REKAPITULASI KEUANGAN DAN ARUS PENDAPATAN
+----------------------------------------------------------------
+  Total Nilai Transaksi Kotor (Bruto) :       Rp465.000
+  Total Potongan Diskon Early Bird    :       -Rp50.000
+  Total Potongan Diskon Kelompok      :       -Rp20.000
+----------------------------------------------------------------
+  TOTAL AKUMULASI DISKON DIKELUARKAN  :       -Rp70.000
+  TOTAL PENDAPATAN BERSIH KEGIATAN    :       Rp395.000
+================================================================
+
+  [4] STATISTIK &amp; METRIK ANALISIS
+----------------------------------------------------------------
+  - Rata-rata Pendapatan per Peserta  : Rp131.667 / orang
+  - Rata-rata Diskon per Peserta      : Rp23.333 / orang
+  - Transaksi Terbesar                : Rp161.000
+    (Dicatat oleh Peserta #3 - Siti Rahma)
+================================================================
+
+  Sesi pelaporan rekapitulasi Modul B selesai dengan sukses.</div>
+        </div>
+      </section>
+
+      <!-- ===== PENGUJIAN ===== -->
+      <section id="pengujian">
+        <h2>Tabel Pengujian Modul B (10 Skenario)</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>Skenario Pengujian</th>
+                <th>Data Masukan</th>
+                <th>Hasil yang Diharapkan</th>
+                <th>Hasil Aktual</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Normal Multi-transaksi (Tie 3 Kategori)</td>
+                <td>3 peserta: 1 Mhs, 1 Dosen, 1 Umum</td>
+                <td>Kategori terbanyak seimbang (1 peserta tiap kategori); Total: Rp395.000</td>
+                <td>Kategori seimbang; Netto: Rp395.000</td>
+                <td><span class="badge badge-green">Berhasil</span></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Dominansi Tunggal Mahasiswa</td>
+                <td>2 Mahasiswa, 1 Dosen, 0 Umum</td>
+                <td>Kategori terbanyak: Mahasiswa (2 peserta; 66.7%)</td>
+                <td>Mahasiswa (2 peserta; 66.7%)</td>
+                <td><span class="badge badge-green">Berhasil</span></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Dominansi Tunggal Dosen</td>
+                <td>1 Mahasiswa, 3 Dosen, 1 Umum</td>
+                <td>Kategori terbanyak: Dosen (3 peserta; 60.0%)</td>
+                <td>Dosen (3 peserta; 60.0%)</td>
+                <td><span class="badge badge-green">Berhasil</span></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Dominansi Tunggal Umum</td>
+                <td>0 Mahasiswa, 1 Dosen, 2 Umum</td>
+                <td>Kategori terbanyak: Umum (2 peserta; 66.7%)</td>
+                <td>Umum (2 peserta; 66.7%)</td>
+                <td><span class="badge badge-green">Berhasil</span></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Kondisi Seri Dua Kategori Puncak</td>
+                <td>2 Mahasiswa, 2 Dosen, 1 Umum</td>
+                <td>Kategori terbanyak: Mahasiswa &amp; Dosen (Imbang terbanyak: 2 peserta)</td>
+                <td>Mahasiswa &amp; Dosen (Imbang terbanyak: 2 peserta)</td>
+                <td><span class="badge badge-green">Berhasil</span></td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Batas Nol Data (Zero Data Prevention)</td>
+                <td>Langsung pilih 'T' pada awal proses</td>
+                <td>Program menolak pembagian nol, menampilkan pesan tidak ada data</td>
+                <td>Pesan aman: Tidak ada transaksi dicatat</td>
+                <td><span class="badge badge-green">Berhasil</span></td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>Pelacak Transaksi Terbesar (Max Value)</td>
+                <td>Mhs: Rp54.000; Umum: Rp230.000; Dosen: Rp125.000</td>
+                <td>Transaksi terbesar: Rp230.000 dicatat oleh peserta Umum</td>
+                <td>Rp230.000 (Peserta #2 - Ir. Hendra)</td>
+                <td><span class="badge badge-green">Berhasil</span></td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>Validasi Pilihan Kategori Salah</td>
+                <td>Input kategori: 4, lalu 0, lalu 1</td>
+                <td>Ditolak dengan pesan [!] Pilihan kategori tidak valid</td>
+                <td>Pesan error muncul, loop minta ulang</td>
+                <td><span class="badge badge-green">Berhasil</span></td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>Validasi Anggota Nol &amp; Negatif</td>
+                <td>Jumlah anggota: 0, lalu -3, lalu 5</td>
+                <td>Ditolak dengan pesan harus bilangan bulat positif (&gt;0)</td>
+                <td>Pesan error muncul, loop minta ulang</td>
+                <td><span class="badge badge-green">Berhasil</span></td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>Validasi Nama Kosong &amp; Karakter Y/T</td>
+                <td>Nama: [Enter], status EB: 'X', lalu 'Y'</td>
+                <td>Ditolak: nama tidak boleh kosong &amp; karakter harus Y/T</td>
+                <td>Pesan validasi muncul dengan tepat</td>
+                <td><span class="badge badge-green">Berhasil</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="margin-top:32px; margin-bottom:12px;">Galeri Tangkapan Layar Eksekusi (10 Skenario Modul B)</h3>
+        <p style="color:var(--text-sub); font-size:13.5px; margin-bottom:16px;">Berikut rekaman tangkapan layar terminal eksekusi Modul B untuk 10 skenario pengujian. Klik salah satu kartu untuk memperbesar:</p>
+
+        <div class="screenshot-grid">
+          <!-- Skenario 1 -->
+          <div class="screenshot-card" onclick="openLightbox('assets/screenshot/modul-b-skenario-1.svg', 'Skenario 1: Rekapitulasi 3 Kategori Seimbang')">
+            <div class="screenshot-card-img-wrap">
+              <img src="assets/screenshot/modul-b-skenario-1.svg" alt="Skenario 1" loading="lazy">
+            </div>
+            <div class="screenshot-card-info">
+              <div class="screenshot-card-title">Skenario 1 · Kategori Seimbang</div>
+              <div class="screenshot-card-desc">Mhs: 1, Dosen: 1, Umum: 1 &rarr; Ketiga kategori seimbang, Netto: Rp395.000</div>
+            </div>
+          </div>
+
+          <!-- Skenario 2 -->
+          <div class="screenshot-card" onclick="openLightbox('assets/screenshot/modul-b-skenario-2.svg', 'Skenario 2: Dominansi Mahasiswa')">
+            <div class="screenshot-card-img-wrap">
+              <img src="assets/screenshot/modul-b-skenario-2.svg" alt="Skenario 2" loading="lazy">
+            </div>
+            <div class="screenshot-card-info">
+              <div class="screenshot-card-title">Skenario 2 · Dominansi Mahasiswa</div>
+              <div class="screenshot-card-desc">Mhs: 2 (66.7%), Dosen: 1, Umum: 0 &rarr; Terbanyak: Mahasiswa</div>
+            </div>
+          </div>
+
+          <!-- Skenario 3 -->
+          <div class="screenshot-card" onclick="openLightbox('assets/screenshot/modul-b-skenario-3.svg', 'Skenario 3: Dominansi Dosen')">
+            <div class="screenshot-card-img-wrap">
+              <img src="assets/screenshot/modul-b-skenario-3.svg" alt="Skenario 3" loading="lazy">
+            </div>
+            <div class="screenshot-card-info">
+              <div class="screenshot-card-title">Skenario 3 · Dominansi Dosen</div>
+              <div class="screenshot-card-desc">Dosen: 3 (60.0%), Mhs: 1, Umum: 1 &rarr; Terbanyak: Dosen</div>
+            </div>
+          </div>
+
+          <!-- Skenario 4 -->
+          <div class="screenshot-card" onclick="openLightbox('assets/screenshot/modul-b-skenario-4.svg', 'Skenario 4: Dominansi Umum')">
+            <div class="screenshot-card-img-wrap">
+              <img src="assets/screenshot/modul-b-skenario-4.svg" alt="Skenario 4" loading="lazy">
+            </div>
+            <div class="screenshot-card-info">
+              <div class="screenshot-card-title">Skenario 4 · Dominansi Umum</div>
+              <div class="screenshot-card-desc">Umum: 2 (66.7%), Dosen: 1, Mhs: 0 &rarr; Terbanyak: Umum</div>
+            </div>
+          </div>
+
+          <!-- Skenario 5 -->
+          <div class="screenshot-card" onclick="openLightbox('assets/screenshot/modul-b-skenario-5.svg', 'Skenario 5: Seri Mahasiswa & Dosen')">
+            <div class="screenshot-card-img-wrap">
+              <img src="assets/screenshot/modul-b-skenario-5.svg" alt="Skenario 5" loading="lazy">
+            </div>
+            <div class="screenshot-card-info">
+              <div class="screenshot-card-title">Skenario 5 · Seri Mahasiswa &amp; Dosen</div>
+              <div class="screenshot-card-desc">Mhs: 2, Dosen: 2, Umum: 1 &rarr; Mahasiswa &amp; Dosen (Imbang: 2 peserta)</div>
+            </div>
+          </div>
+
+          <!-- Skenario 6 -->
+          <div class="screenshot-card" onclick="openLightbox('assets/screenshot/modul-b-skenario-6.svg', 'Skenario 6: Pencegahan Pembagian Nol Data')">
+            <div class="screenshot-card-img-wrap">
+              <img src="assets/screenshot/modul-b-skenario-6.svg" alt="Skenario 6" loading="lazy">
+            </div>
+            <div class="screenshot-card-info">
+              <div class="screenshot-card-title">Skenario 6 · Nol Data (Zero Data)</div>
+              <div class="screenshot-card-desc">Pencegahan error pembagian nol saat transaksi kosong &rarr; Keluar aman</div>
+            </div>
+          </div>
+
+          <!-- Skenario 7 -->
+          <div class="screenshot-card" onclick="openLightbox('assets/screenshot/modul-b-skenario-7.svg', 'Skenario 7: Pelacak Transaksi Terbesar')">
+            <div class="screenshot-card-img-wrap">
+              <img src="assets/screenshot/modul-b-skenario-7.svg" alt="Skenario 7" loading="lazy">
+            </div>
+            <div class="screenshot-card-info">
+              <div class="screenshot-card-title">Skenario 7 · Transaksi Terbesar</div>
+              <div class="screenshot-card-desc">Verifikasi rekor tagihan tertinggi (Rp230.000) terlacak akurat</div>
+            </div>
+          </div>
+
+          <!-- Skenario 8 -->
+          <div class="screenshot-card" onclick="openLightbox('assets/screenshot/modul-b-skenario-8.svg', 'Skenario 8: Validasi Kategori')">
+            <div class="screenshot-card-img-wrap">
+              <img src="assets/screenshot/modul-b-skenario-8.svg" alt="Skenario 8" loading="lazy">
+            </div>
+            <div class="screenshot-card-info">
+              <div class="screenshot-card-title">Skenario 8 · Validasi Kategori</div>
+              <div class="screenshot-card-desc">Input 4 &amp; 0 ditolak dengan pesan: [!] Pilihan kategori tidak valid</div>
+            </div>
+          </div>
+
+          <!-- Skenario 9 -->
+          <div class="screenshot-card" onclick="openLightbox('assets/screenshot/modul-b-skenario-9.svg', 'Skenario 9: Validasi Anggota Positif')">
+            <div class="screenshot-card-img-wrap">
+              <img src="assets/screenshot/modul-b-skenario-9.svg" alt="Skenario 9" loading="lazy">
+            </div>
+            <div class="screenshot-card-info">
+              <div class="screenshot-card-title">Skenario 9 · Validasi Anggota Positif</div>
+              <div class="screenshot-card-desc">Input 0 &amp; -3 ditolak: harus bilangan bulat positif (&gt;0)</div>
+            </div>
+          </div>
+
+          <!-- Skenario 10 -->
+          <div class="screenshot-card" onclick="openLightbox('assets/screenshot/modul-b-skenario-10.svg', 'Skenario 10: Validasi String & Karakter')">
+            <div class="screenshot-card-img-wrap">
+              <img src="assets/screenshot/modul-b-skenario-10.svg" alt="Skenario 10" loading="lazy">
+            </div>
+            <div class="screenshot-card-info">
+              <div class="screenshot-card-title">Skenario 10 · Validasi String &amp; Karakter</div>
+              <div class="screenshot-card-desc">Nama kosong &amp; karakter pilihan salah ditolak secara protektif</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== TRACE TABLE ===== -->
+      <section id="trace">
+        <h2>Trace Table Modul B</h2>
+
+        <h3>1. Trace Table Perulangan (Loop Akumulasi Transaksi)</h3>
+        <p style="color:var(--text-sub); font-size:13.5px; margin-bottom:12px;">Penelusuran nilai variabel akumulator Modul B saat memproses 3 transaksi berturut-turut (Skenario 1):</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Iterasi</th>
+                <th>Nama Peserta</th>
+                <th>Kat</th>
+                <th>Tagihan</th>
+                <th>Diskon</th>
+                <th>totalMhs</th>
+                <th>totalDsn</th>
+                <th>totalUmum</th>
+                <th>totalDiskon</th>
+                <th>totalPendapatan</th>
+                <th>tagihanTerbesar</th>
+                <th>lanjut</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Awal</strong></td>
+                <td>&mdash;</td>
+                <td>&mdash;</td>
+                <td>&mdash;</td>
+                <td>&mdash;</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>Rp0</td>
+                <td>Rp0</td>
+                <td>Rp0</td>
+                <td>'Y'</td>
+              </tr>
+              <tr>
+                <td><strong>#1</strong></td>
+                <td>Budi Santoso</td>
+                <td>1 (Mhs)</td>
+                <td>Rp109.000</td>
+                <td>Rp21.000</td>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+                <td>Rp21.000</td>
+                <td>Rp109.000</td>
+                <td>Rp109.000 (Budi)</td>
+                <td>'Y'</td>
+              </tr>
+              <tr>
+                <td><strong>#2</strong></td>
+                <td>Dr. Hendra</td>
+                <td>2 (Dosen)</td>
+                <td>Rp125.000</td>
+                <td>Rp0</td>
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+                <td>Rp21.000</td>
+                <td>Rp234.000</td>
+                <td>Rp125.000 (Hendra)</td>
+                <td>'Y'</td>
+              </tr>
+              <tr>
+                <td><strong>#3</strong></td>
+                <td>Siti Rahma</td>
+                <td>3 (Umum)</td>
+                <td>Rp161.000</td>
+                <td>Rp49.000</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>Rp70.000</td>
+                <td>Rp395.000</td>
+                <td>Rp161.000 (Siti)</td>
+                <td>'T'</td>
+              </tr>
+              <tr>
+                <td><strong>Akhir</strong></td>
+                <td>&mdash;</td>
+                <td>&mdash;</td>
+                <td>&mdash;</td>
+                <td>&mdash;</td>
+                <td><strong>1</strong></td>
+                <td><strong>1</strong></td>
+                <td><strong>1</strong></td>
+                <td><strong>Rp70.000</strong></td>
+                <td><strong>Rp395.000</strong></td>
+                <td><strong>Rp161.000</strong></td>
+                <td>'T' (Keluar)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="margin-top:28px;">2. Trace Table Percabangan (Evaluasi Kategori Terbanyak)</h3>
+        <p style="color:var(--text-sub); font-size:13.5px; margin-bottom:12px;">Penelusuran logika fungsi <code>evaluasiKategoriTerbanyak(mhs, dsn, umum)</code> untuk beragam kondisi pengujian:</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Kasus</th>
+                <th>Data Masukan (Mhs, Dsn, Umum)</th>
+                <th>Kondisi Logika yang Diuji</th>
+                <th>Evaluasi Boolean</th>
+                <th>Hasil / Nilai Kembali</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>0, 0, 0</td>
+                <td><code>mhs == 0 &amp;&amp; dsn == 0 &amp;&amp; umum == 0</code></td>
+                <td><span class="badge badge-green">TRUE</span></td>
+                <td>"Belum ada data pendaftar"</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>1, 1, 1</td>
+                <td><code>mhs == dsn &amp;&amp; dsn == umum</code></td>
+                <td><span class="badge badge-green">TRUE</span></td>
+                <td>"Ketiga kategori seimbang (1 peserta tiap kategori)"</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>2, 2, 1</td>
+                <td><code>mhs == dsn &amp;&amp; mhs &gt; umum</code></td>
+                <td><span class="badge badge-green">TRUE</span></td>
+                <td>"Mahasiswa &amp; Dosen (Imbang terbanyak: 2 peserta)"</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>2, 1, 0</td>
+                <td><code>mhs &gt; dsn &amp;&amp; mhs &gt; umum</code></td>
+                <td><span class="badge badge-green">TRUE</span></td>
+                <td>"Mahasiswa (2 peserta)"</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>1, 3, 1</td>
+                <td><code>dsn &gt; mhs &amp;&amp; dsn &gt; umum</code></td>
+                <td><span class="badge badge-green">TRUE</span></td>
+                <td>"Dosen (3 peserta)"</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>0, 1, 2</td>
+                <td><code>umum &gt; mhs &amp;&amp; umum &gt; dsn</code></td>
+                <td><span class="badge badge-green">TRUE</span></td>
+                <td>"Umum (2 peserta)"</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <span>SSI1144 · Algoritma dan Pengantar Pemrograman · Universitas Ma Chung</span>
+      <span>Studi Kasus 07 · Sistem Pendaftaran Seminar Nasional · Modul B</span>
+    </footer>
+
+  </div>
+
+  <!-- Lightbox Modal untuk Preview Screenshot -->
+  <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox(event)">
+    <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+    <img id="lightboxImg" class="lightbox-content" src="" alt="Preview Screenshot">
+  </div>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const sidebar = document.getElementById('sidebar');
+    hamburger.addEventListener('click', () => sidebar.classList.toggle('open'));
+    document.addEventListener('click', e => {
+      if (!sidebar.contains(e.target) && !hamburger.contains(e.target))
+        sidebar.classList.remove('open');
+    });
+
+    function copyCode(btn) {
+      const pre = btn.closest('.code-block').querySelector('pre');
+      navigator.clipboard.writeText(pre.innerText).then(() => {
+        btn.textContent = 'Tersalin!';
+        setTimeout(() => btn.textContent = 'Salin', 2000);
+      });
+    }
+
+    // Lightbox functions
+    function openLightbox(src, caption) {
+      const modal = document.getElementById('lightboxModal');
+      const img = document.getElementById('lightboxImg');
+      img.src = src;
+      img.alt = caption || 'Preview Screenshot';
+      modal.classList.add('active');
+    }
+
+    function closeLightbox(e) {
+      if (e.target.id === 'lightboxModal' || e.target.classList.contains('lightbox-close')) {
+        document.getElementById('lightboxModal').classList.remove('active');
+      }
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        const modal = document.getElementById('lightboxModal');
+        if (modal) modal.classList.remove('active');
+      }
+    });
+
+    // Highlight active sidebar anchor on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const anchors = document.querySelectorAll('.sidebar-nav a[href^="#"]');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          anchors.forEach(a => a.classList.remove('active'));
+          const match = document.querySelector(`.sidebar-nav a[href="#${e.target.id}"]`);
+          if (match) match.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    sections.forEach(s => obs.observe(s));
+  </script>
 </body>
+
 </html>
