@@ -1,0 +1,272 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 1680" width="100%" height="100%" style="background:#0f172a; font-family:'Segoe UI',system-ui,-apple-system,sans-serif;">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="grad-start" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="grad-process" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="grad-io" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#6d28d9"/>
+    </linearGradient>
+    <linearGradient id="grad-decision" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="grad-end" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#b91c1c"/>
+    </linearGradient>
+
+    <!-- Filters for soft shadow -->
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+
+    <!-- Marker Arrow -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#f87171"/>
+    </marker>
+  </defs>
+
+  <style>
+    .label-title { font-size: 20px; font-weight: 700; fill: #f8fafc; text-anchor: middle; }
+    .label-sub { font-size: 13px; fill: #94a3b8; text-anchor: middle; }
+    .node-text { font-size: 13px; font-weight: 600; fill: #ffffff; text-anchor: middle; }
+    .node-subtext { font-size: 11px; fill: #e2e8f0; text-anchor: middle; }
+    .flow-line { stroke: #94a3b8; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+    .flow-loop { stroke: #38bdf8; stroke-width: 2; stroke-dasharray: 5,5; fill: none; marker-end: url(#arrow); }
+    .branch-label { font-size: 11px; font-weight: 700; fill: #cbd5e1; }
+  </style>
+
+  <!-- Title Card -->
+  <text x="425" y="40" class="label-title">FLOWCHART MODUL A · PROSES UTAMA</text>
+  <text x="425" y="62" class="label-sub">Studi Kasus 07 · Sistem Pendaftaran Seminar Nasional (SSI1144)</text>
+
+  <!-- 1. Start (Terminator) -->
+  <g filter="url(#shadow)">
+    <rect x="325" y="85" width="200" height="42" rx="21" fill="url(#grad-start)"/>
+    <text x="425" y="111" class="node-text">MULAI</text>
+  </g>
+
+  <!-- Flow 1 -> 2 -->
+  <path d="M 425 127 L 425 155" class="flow-line"/>
+
+  <!-- 2. Init Akumulator (Process) -->
+  <g filter="url(#shadow)">
+    <rect x="250" y="155" width="350" height="52" rx="8" fill="url(#grad-process)"/>
+    <text x="425" y="176" class="node-text">Inisialisasi Variabel Akumulator</text>
+    <text x="425" y="194" class="node-subtext">totalPeserta = 0, totalDiskon = 0, totalPendapatan = 0, no = 1</text>
+  </g>
+
+  <!-- Flow 2 -> 3 -->
+  <path d="M 425 207 L 425 235" class="flow-line"/>
+
+  <!-- 3. Loop Condition: lanjut == 'Y'? (Decision) -->
+  <g filter="url(#shadow)">
+    <polygon points="425,235 550,285 425,335 300,285" fill="url(#grad-decision)"/>
+    <text x="425" y="281" class="node-text">lanjut == 'Y'?</text>
+    <text x="425" y="297" class="node-subtext">(Perulangan Utama)</text>
+  </g>
+
+  <text x="435" y="355" class="branch-label">Ya</text>
+  <text x="560" y="278" class="branch-label" style="fill:#f87171;">Tidak</text>
+
+  <!-- Flow 3 -> 4 (Inside Loop) -->
+  <path d="M 425 335 L 425 375" class="flow-line"/>
+
+  <!-- 4. Input & Validasi Data Peserta (I/O) -->
+  <g filter="url(#shadow)">
+    <polygon points="260,375 620,375 580,445 220,445" fill="url(#grad-io)"/>
+    <text x="425" y="401" class="node-text">Input Data Peserta (dengan Validasi):</text>
+    <text x="425" y="419" class="node-subtext">namaPeserta, kategori (1/2/3), statusEB (Y/T),</text>
+    <text x="425" y="434" class="node-subtext">jumlahAnggota (&gt;0), statusSertif (Y/T), statusMakan (Y/T)</text>
+  </g>
+
+  <!-- Flow 4 -> 5 -->
+  <path d="M 425 445 L 425 475" class="flow-line"/>
+
+  <!-- 5. Tentukan Tarif Dasar (Decision Branch) -->
+  <g filter="url(#shadow)">
+    <polygon points="425,475 540,515 425,555 310,515" fill="url(#grad-decision)"/>
+    <text x="425" y="519" class="node-text">Kategori Peserta?</text>
+  </g>
+
+  <!-- 3 Branch boxes for Kategori -->
+  <!-- Kat 1: Mahasiswa -->
+  <path d="M 310 515 L 180 515 L 180 575" class="flow-line"/>
+  <text x="210" y="508" class="branch-label">1: Mahasiswa</text>
+  <g filter="url(#shadow)">
+    <rect x="100" y="575" width="160" height="38" rx="6" fill="url(#grad-process)"/>
+    <text x="180" y="598" class="node-text">tarif = 75.000</text>
+  </g>
+
+  <!-- Kat 2: Dosen -->
+  <path d="M 425 555 L 425 575" class="flow-line"/>
+  <text x="432" y="568" class="branch-label">2: Dosen</text>
+  <g filter="url(#shadow)">
+    <rect x="345" y="575" width="160" height="38" rx="6" fill="url(#grad-process)"/>
+    <text x="425" y="598" class="node-text">tarif = 125.000</text>
+  </g>
+
+  <!-- Kat 3: Umum -->
+  <path d="M 540 515 L 670 515 L 670 575" class="flow-line"/>
+  <text x="575" y="508" class="branch-label">3: Umum</text>
+  <g filter="url(#shadow)">
+    <rect x="590" y="575" width="160" height="38" rx="6" fill="url(#grad-process)"/>
+    <text x="670" y="598" class="node-text">tarif = 175.000</text>
+  </g>
+
+  <!-- Merge branches -->
+  <path d="M 180 613 L 180 645 L 425 645" style="stroke: #94a3b8; stroke-width: 2; fill: none;"/>
+  <path d="M 670 613 L 670 645 L 425 645" style="stroke: #94a3b8; stroke-width: 2; fill: none;"/>
+  <path d="M 425 613 L 425 665" class="flow-line"/>
+
+  <!-- 6. Decision Early Bird -->
+  <g filter="url(#shadow)">
+    <polygon points="425,665 530,700 425,735 320,700" fill="url(#grad-decision)"/>
+    <text x="425" y="704" class="node-text">earlyBird == true?</text>
+  </g>
+
+  <path d="M 320 700 L 220 700 L 220 755" class="flow-line"/>
+  <text x="245" y="692" class="branch-label">Ya (20%)</text>
+  <g filter="url(#shadow)">
+    <rect x="120" y="755" width="200" height="42" rx="6" fill="url(#grad-process)"/>
+    <text x="220" y="773" class="node-text">diskonEB = tarif × 0.20</text>
+    <text x="220" y="789" class="node-subtext">tarifSetelahEB = tarif - diskonEB</text>
+  </g>
+
+  <path d="M 530 700 L 630 700 L 630 755" class="flow-line"/>
+  <text x="555" y="692" class="branch-label">Tidak (0%)</text>
+  <g filter="url(#shadow)">
+    <rect x="530" y="755" width="200" height="42" rx="6" fill="url(#grad-process)"/>
+    <text x="630" y="773" class="node-text">diskonEB = 0</text>
+    <text x="630" y="789" class="node-subtext">tarifSetelahEB = tarif</text>
+  </g>
+
+  <!-- Merge EB branches -->
+  <path d="M 220 797 L 220 825 L 425 825" style="stroke: #94a3b8; stroke-width: 2; fill: none;"/>
+  <path d="M 630 797 L 630 825 L 425 825" style="stroke: #94a3b8; stroke-width: 2; fill: none;"/>
+  <path d="M 425 825 L 425 845" class="flow-line"/>
+
+  <!-- 7. Decision Diskon Kelompok (jumlahAnggota >= 5) -->
+  <g filter="url(#shadow)">
+    <polygon points="425,845 540,880 425,915 310,880" fill="url(#grad-decision)"/>
+    <text x="425" y="884" class="node-text">jumlahAnggota &gt;= 5?</text>
+  </g>
+
+  <path d="M 310 880 L 220 880 L 220 935" class="flow-line"/>
+  <text x="235" y="872" class="branch-label">Ya (10%)</text>
+  <g filter="url(#shadow)">
+    <rect x="110" y="935" width="220" height="42" rx="6" fill="url(#grad-process)"/>
+    <text x="220" y="953" class="node-text">diskonKlp = tarifSetelahEB × 0.10</text>
+    <text x="220" y="969" class="node-subtext">tarifBersih = tarifSetelahEB - diskonKlp</text>
+  </g>
+
+  <path d="M 540 880 L 630 880 L 630 935" class="flow-line"/>
+  <text x="560" y="872" class="branch-label">Tidak (0%)</text>
+  <g filter="url(#shadow)">
+    <rect x="520" y="935" width="220" height="42" rx="6" fill="url(#grad-process)"/>
+    <text x="630" y="953" class="node-text">diskonKlp = 0</text>
+    <text x="630" y="969" class="node-subtext">tarifBersih = tarifSetelahEB</text>
+  </g>
+
+  <!-- Merge Kelompok branches -->
+  <path d="M 220 977 L 220 1005 L 425 1005" style="stroke: #94a3b8; stroke-width: 2; fill: none;"/>
+  <path d="M 630 977 L 630 1005 L 425 1005" style="stroke: #94a3b8; stroke-width: 2; fill: none;"/>
+  <path d="M 425 1005 L 425 1025" class="flow-line"/>
+
+  <!-- 8. Hitung Biaya Tambahan & Total Tagihan (Process) -->
+  <g filter="url(#shadow)">
+    <rect x="230" y="1025" width="390" height="66" rx="8" fill="url(#grad-process)"/>
+    <text x="425" y="1048" class="node-text">Hitung Biaya Tambahan &amp; Total Tagihan</text>
+    <text x="425" y="1066" class="node-subtext">tambahan = (sertif ? 20.000 : 0) + (makan ? 35.000 : 0)</text>
+    <text x="425" y="1082" class="node-subtext">totalTagihan = tarifBersih + tambahan (Biaya tambahan tanpa diskon)</text>
+  </g>
+
+  <!-- Flow 8 -> 9 -->
+  <path d="M 425 1091 L 425 1115" class="flow-line"/>
+
+  <!-- 9. Akumulasi Rekapitulasi (Process) -->
+  <g filter="url(#shadow)">
+    <rect x="240" y="1115" width="370" height="52" rx="8" fill="url(#grad-process)"/>
+    <text x="425" y="1136" class="node-text">Akumulasi ke Rekapitulasi Sesi</text>
+    <text x="425" y="1154" class="node-subtext">totalDiskon += totalDiskonPeserta, totalPendapatan += totalTagihan, dll.</text>
+  </g>
+
+  <!-- Flow 9 -> 10 -->
+  <path d="M 425 1167 L 425 1195" class="flow-line"/>
+
+  <!-- 10. Output Rincian Tagihan (I/O) -->
+  <g filter="url(#shadow)">
+    <polygon points="260,1195 620,1195 580,1255 220,1255" fill="url(#grad-io)"/>
+    <text x="425" y="1220" class="node-text">Tampilkan Rincian Tagihan Peserta</text>
+    <text x="425" y="1238" class="node-subtext">Tarif dasar, diskon EB, diskon kelompok, biaya tambahan, total tagihan</text>
+  </g>
+
+  <!-- Flow 10 -> 11 -->
+  <path d="M 425 1255 L 425 1280" class="flow-line"/>
+
+  <!-- 11. Input Lanjut? (I/O) -->
+  <g filter="url(#shadow)">
+    <polygon points="280,1280 600,1280 560,1330 240,1330" fill="url(#grad-io)"/>
+    <text x="425" y="1302" class="node-text">Input: Daftarkan peserta lain? (Y/T)</text>
+    <text x="425" y="1318" class="node-subtext">nomorUrut = nomorUrut + 1</text>
+  </g>
+
+  <!-- Flow 11 back to Loop Decision (3) -->
+  <path d="M 240 1305 L 80 1305 L 80 285 L 300 285" class="flow-loop"/>
+  <text x="88" y="275" class="branch-label" style="fill:#38bdf8;">Ulangi jika lanjut == 'Y'</text>
+
+  <!-- Flow from Decision 3 (Tidak / lanjut != 'Y') to 12 Rekapitulasi -->
+  <path d="M 550 285 L 780 285 L 780 1380 L 595 1380" class="flow-line"/>
+
+  <!-- 12. Rekapitulasi Sesi (I/O) -->
+  <g filter="url(#shadow)">
+    <polygon points="250,1355 610,1355 570,1430 210,1430" fill="url(#grad-io)"/>
+    <text x="410" y="1382" class="node-text">Tampilkan Rekapitulasi Sesi Modul A</text>
+    <text x="410" y="1402" class="node-subtext">Total pendaftar per kategori, total EB, sertif, makan,</text>
+    <text x="410" y="1418" class="node-subtext">total seluruh diskon &amp; total pendapatan seminar</text>
+  </g>
+
+  <!-- Flow 12 -> 13 -->
+  <path d="M 410 1430 L 410 1470" class="flow-line"/>
+
+  <!-- 13. Selesai (Terminator) -->
+  <g filter="url(#shadow)">
+    <rect x="310" y="1470" width="200" height="42" rx="21" fill="url(#grad-end)"/>
+    <text x="410" y="1496" class="node-text">SELESAI</text>
+  </g>
+
+  <!-- Legend Box at Bottom -->
+  <g transform="translate(140, 1550)">
+    <rect x="0" y="0" width="570" height="90" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="285" y="22" class="node-text" style="font-size:12px; fill:#cbd5e1;">LEGENDA SIMBOL FLOWCHART STANDAR</text>
+    
+    <!-- Terminator -->
+    <rect x="20" y="38" width="55" height="20" rx="10" fill="url(#grad-start)"/>
+    <text x="85" y="52" class="node-subtext" style="fill:#cbd5e1;">Terminator (Mulai/Selesai)</text>
+
+    <!-- Decision -->
+    <polygon points="265,38 285,48 265,58 245,48" fill="url(#grad-decision)"/>
+    <text x="295" y="52" class="node-subtext" style="fill:#cbd5e1;">Decision (Percabangan)</text>
+
+    <!-- Process -->
+    <rect x="20" y="65" width="55" height="18" rx="3" fill="url(#grad-process)"/>
+    <text x="85" y="78" class="node-subtext" style="fill:#cbd5e1;">Process (Perhitungan/Set)</text>
+
+    <!-- I/O -->
+    <polygon points="250,65 285,65 280,83 245,83" fill="url(#grad-io)"/>
+    <text x="295" y="78" class="node-subtext" style="fill:#cbd5e1;">Input / Output Data</text>
+  </g>
+</svg>
