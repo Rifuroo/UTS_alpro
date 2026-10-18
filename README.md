@@ -14,7 +14,7 @@ Program C++ untuk menghitung biaya pendaftaran seminar nasional dan merekap pend
 | Nama | NIM | Modul |
 |------|-----|-------|
 | Riflo Ahmad Nendriansyah | 322610018 | Modul A |
-| Praysilia Sifra | 322610010 | Modul B |
+| Praysilia Sifra Paradisa| 322610010 | Modul B |
 
 ## Struktur Repository
 
