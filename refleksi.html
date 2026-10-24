@@ -1,63 +1,301 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Refleksi | Seminar Nasional SSI1144</title>
+  <title>Refleksi Proyek | Seminar Nasional SSI1144</title>
+  <meta name="description"
+    content="Refleksi Pelaksanaan Proyek UTS SSI1144 Algoritma dan Pengantar Pemrograman: Pembagian peran kerja, kontribusi anggota, tantangan tersulit, solusi, dan rencana pengembangan UAS.">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
-<div class="shell">
-  <header class="topbar">
-    <a href="index.html" class="topbar-brand">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-      Seminar Nasional <span class="topbar-badge">SSI1144</span>
-    </a>
-    <button class="hamburger" id="hamburger">&#9776;</button>
-  </header>
-  <nav class="sidebar" id="sidebar">
-    <div class="sidebar-section">
-      <div class="sidebar-label">Halaman Utama</div>
-      <ul class="sidebar-nav">
-        <li><a href="index.html">Beranda</a></li>
-        <li><a href="analisis.html">Analisis Masalah</a></li>
-      </ul>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-label">Modul Program</div>
-      <ul class="sidebar-nav">
-        <li><a href="modul-a.html">Modul A</a></li>
-        <li><a href="modul-b.html">Modul B</a></li>
-        <li><a href="integrasi.html">Program Terintegrasi</a></li>
-      </ul>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-label">Dokumentasi</div>
-      <ul class="sidebar-nav">
-        <li><a href="refleksi.html" class="active">Refleksi</a></li>
-        <li><a href="pernyataan-ai.html">Pernyataan AI</a></li>
-      </ul>
-    </div>
-  </nav>
-  <main>
-    <div class="page-header">
-      <div class="page-tag">Refleksi · Evaluasi</div>
-      <h1 class="page-title">Refleksi</h1>
-      <p class="page-desc">Halaman ini sedang dalam pengerjaan.</p>
-    </div>
-    <div class="callout callout-warn">
-      <span>Konten halaman ini akan ditambahkan sesuai tahapan pengerjaan proyek.</span>
-    </div>
-  </main>
-  <footer>
-    <span>SSI1144 · Algoritma dan Pengantar Pemrograman · Universitas Ma Chung</span>
-    <span>Studi Kasus 07 · Sistem Pendaftaran Seminar Nasional</span>
-  </footer>
-</div>
-<script>
-  const h = document.getElementById('hamburger'), s = document.getElementById('sidebar');
-  h.addEventListener('click', () => s.classList.toggle('open'));
-  document.addEventListener('click', e => { if (!s.contains(e.target) && !h.contains(e.target)) s.classList.remove('open'); });
-</script>
+  <div class="shell">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <a href="index.html" class="topbar-brand">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+        </svg>
+        Seminar Nasional
+        <span class="topbar-badge">SSI1144</span>
+      </a>
+      <div class="topbar-right">
+        <a href="https://github.com/Rifuroo/UTS_alpro" class="topbar-link" target="_blank" rel="noopener">GitHub Repo</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Buka menu">&#9776;</button>
+    </header>
+
+    <!-- SIDEBAR -->
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">Halaman Utama</div>
+        <ul class="sidebar-nav">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="analisis.html">Analisis Masalah</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">Modul Program</div>
+        <ul class="sidebar-nav">
+          <li><a href="modul-a.html">Modul A</a></li>
+          <li><a href="modul-b.html">Modul B</a></li>
+          <li><a href="integrasi.html">Program Terintegrasi</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">Dokumentasi</div>
+        <ul class="sidebar-nav">
+          <li><a href="refleksi.html" class="active">Refleksi</a></li>
+          <li><a href="pernyataan-ai.html">Pernyataan AI</a></li>
+        </ul>
+      </div>
+
+      <!-- On-page anchor nav -->
+      <div class="sidebar-section">
+        <div class="sidebar-label">Di Halaman Ini</div>
+        <ul class="sidebar-nav">
+          <li><a href="#pembagian-kerja">Pembagian Pekerjaan</a></li>
+          <li><a href="#kontribusi-anggota">Kontribusi Individu</a></li>
+          <li><a href="#bagian-tersulit">Bagian Tersulit &amp; Solusi</a></li>
+          <li><a href="#kesalahan-pembelajaran">Kesalahan &amp; Perbaikan</a></li>
+          <li><a href="#pengetahuan-baru">Pengetahuan Baru</a></li>
+          <li><a href="#rencana-uas">Rencana Pengembangan UAS</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main>
+      <div class="page-header">
+        <div class="page-tag">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+          Dokumentasi · Refleksi Proyek
+        </div>
+        <h1 class="page-title">Refleksi &amp; Evaluasi Proyek</h1>
+        <p class="page-desc">Dokumentasi reflektif pelaksanaan proyek Ujian Tengah Semester (UTS) mata kuliah Algoritma dan Pengantar Pemrograman (SSI1144). Memuat transparansi pembagian kerja, kontribusi nyata kedua anggota, tantangan teknis, pelajaran algoritma yang dipetik, dan roadmap pengembangan ke depan.</p>
+      </div>
+
+      <!-- ===== 1. PEMBAGIAN PEKERJAAN ===== -->
+      <section id="pembagian-kerja">
+        <h2>1. Pembagian Pekerjaan</h2>
+        <div class="card">
+          <p>Sesuai dengan ketentuan silabus dan petunjuk UTS, pengerjaan proyek dibagi secara jelas ke dalam dua modul spesifik dengan kedua anggota tetap berkontribusi aktif dalam coding C++, penulisan algoritma, pengujian, dan dokumentasi web:</p>
+          <div class="table-wrap" style="margin-top:14px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Anggota Tim</th>
+                  <th>NIM</th>
+                  <th>Modul Utama</th>
+                  <th>Fokus Tanggung Jawab</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Riflo Ahmad Nendriansyah</strong></td>
+                  <td>322610018</td>
+                  <td><span class="badge badge-blue">Modul A</span></td>
+                  <td>
+                    • Penanggung jawab utama logika alur pendaftaran peserta.<br>
+                    • Analisis tarif dasar, percabangan diskon bertingkat (Early Bird 20% &amp; Kelompok 10%).<br>
+                    • Implementasi sanitasi input string &amp; validasi ketat.<br>
+                    • Penyusunan pseudocode dan flowchart Modul A.<br>
+                    • Desain tata letak global web GitHub Pages &amp; CSS.
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Praysilia Sifra Paradisa</strong></td>
+                  <td>322610010</td>
+                  <td><span class="badge badge-purple">Modul B</span></td>
+                  <td>
+                    • Penanggung jawab utama logika rekapitulasi data &amp; statistik.<br>
+                    • Perancangan akumulator keuangan, fasilitas, dan persentase.<br>
+                    • Implementasi algoritma penentu kategori terbanyak dengan evaluasi kondisi seimbang (tie-breaker).<br>
+                    • Penyusunan pseudocode, flowchart, dan pengujian Modul B.<br>
+                    • Sinkronisasi data integrasi dan trace table.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 2. KONTRIBUSI ANGGOTA ===== -->
+      <section id="kontribusi-anggota">
+        <h2>2. Kontribusi Anggota</h2>
+        <div class="card-grid">
+          <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+              <h3 style="margin:0;">Riflo Ahmad Nendriansyah</h3>
+              <span class="badge badge-blue">NIM: 322610018</span>
+            </div>
+            <ul style="padding-left:18px; color:var(--text-sub); font-size:13.5px; line-height:1.8;">
+              <li>Menulis source code inti <code>src/modul_a.cpp</code> (342 baris).</li>
+              <li>Menyusun pseudocode <code>docs/pseudocode-modul-a.txt</code>.</li>
+              <li>Membuat diagram alur <code>assets/flowchart/flowchart-modul-a.svg</code>.</li>
+              <li>Menyiapkan template desain web responsif (CSS tokens, flex/grid shell, topbar, sidebar, layout).</li>
+              <li>Menjalankan 10 skenario pengujian terminal untuk Modul A dan mengambil tangkapan layar bukti eksekusi.</li>
+              <li>Mengembangkan kode terintegrasi <code>src/program_terintegrasi.cpp</code>.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+              <h3 style="margin:0;">Praysilia Sifra Paradisa</h3>
+              <span class="badge badge-purple">NIM: 322610010</span>
+            </div>
+            <ul style="padding-left:18px; color:var(--text-sub); font-size:13.5px; line-height:1.8;">
+              <li>Menulis source code inti <code>src/modul_b.cpp</code> (440 baris).</li>
+              <li>Menyusun pseudocode rekapitulasi <code>docs/pseudocode-modul-b.txt</code>.</li>
+              <li>Membuat diagram alur <code>assets/flowchart/flowchart-modul-b.svg</code>.</li>
+              <li>Merancang logika tie-breaker untuk menangani kasus imbang pada kategori peserta terbanyak.</li>
+              <li>Menjalankan 10 skenario pengujian rekapitulasi Modul B beserta dokumentasi visualnya.</li>
+              <li>Menyusun tabel trace perulangan dan trace percabangan multi-kondisi.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 3. BAGIAN TERSULIT & SOLUSI ===== -->
+      <section id="bagian-tersulit">
+        <h2>3. Bagian Tersulit &amp; Solusi Penyelesaian</h2>
+        <div class="card">
+          <div style="margin-bottom:18px;">
+            <h4 style="color:var(--yellow); font-size:15px; margin-bottom:6px;">A. Penanganan Buffer Masukan (Input Trapping) di C++ Tanpa Library Eksternal</h4>
+            <p style="color:var(--text-sub); font-size:13.5px;"><strong>Tantangan:</strong> Penggunaan kombinasi <code>cin &gt;&gt;</code> untuk angka dan <code>getline()</code> untuk nama sering menyebabkan newline (<code>\n</code>) tertinggal di buffer, sehingga program langsung melompati input nama pada transaksi berikutnya tanpa memberi kesempatan pengguna mengetik.</p>
+            <p style="color:var(--text); font-size:13.5px; margin-top:4px;"><strong>Solusi:</strong> Kami menstandarkan seluruh pembacaan input console menggunakan fungsi kustom <code>bacaBaris()</code> berbasis <code>getline(cin, baris)</code> dengan pembersihan spasi (trim) dan konversi bertipe via <code>istringstream</code>. Hal ini menjamin program 100% kebal terhadap crash maupun buffer skipping.</p>
+          </div>
+          <div style="margin-bottom:18px;">
+            <h4 style="color:var(--yellow); font-size:15px; margin-bottom:6px;">B. Logika Evaluasi Kategori Terbanyak Saat Kondisi Imbang (Tie-Breaking)</h4>
+            <p style="color:var(--text-sub); font-size:13.5px;"><strong>Tantangan:</strong> Mencari nilai terbesar dari 3 kategori (Mahasiswa, Dosen, Umum) sangat rawan menghasilkan kesimpulan keliru jika hanya menggunakan <code>if-else if</code> sederhana, terutama ketika terjadi seri (misalnya mahasiswa = dosen &gt; umum, atau ketiga kategori sama banyak).</p>
+            <p style="color:var(--text); font-size:13.5px; margin-top:4px;"><strong>Solusi:</strong> Kami menyusun fungsi <code>evaluasiKategoriTerbanyak()</code> dengan struktur evaluasi lengkap: memeriksa kesamaan ketiga kategori terlebih dahulu, kemudian memeriksa kesamaan dua kategori dengan nilai maksimum, baru memutuskan pemenang tunggal jika tidak ada kondisi seri.</p>
+          </div>
+          <div>
+            <h4 style="color:var(--yellow); font-size:15px; margin-bottom:6px;">C. Hirarki Perhitungan Diskon Bertingkat vs Biaya Tambahan</h4>
+            <p style="color:var(--text-sub); font-size:13.5px;"><strong>Tantangan:</strong> Memastikan aturan bisnis terpenuhi secara presisi: diskon kelompok 10% harus dihitung setelah diskon Early Bird (bukan dari tarif dasar), sementara sertifikat cetak dan paket makan tidak boleh ikut terpotong diskon sedikit pun.</p>
+            <p style="color:var(--text); font-size:13.5px; margin-top:4px;"><strong>Solusi:</strong> Kami memisahkan tahapan kalkulasi secara berjenjang dalam variabel: <code>tarifSetelahEB = tarif - diskonEB</code>, lalu <code>diskonKlp = tarifSetelahEB * 0.10</code>, dan <code>totalTagihan = (tarifSetelahEB - diskonKlp) + biayaTambahan</code>.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 4. KESALAHAN & PEMBELAJARAN ===== -->
+      <section id="kesalahan-pembelajaran">
+        <h2>4. Kesalahan &amp; Perbaikan Selama Pengerjaan</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Kesalahan Awal</th>
+                <th>Gejala / Efek</th>
+                <th>Tindakan Koreksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Nilai masukan jumlah anggota kelompok menerima angka 0 dan negatif.</td>
+                <td>Perhitungan diskon kelompok tetap berjalan dan merusak integritas data pendaftaran.</td>
+                <td>Menambahkan loop validasi <code>bacaIntPositif()</code> yang menolak angka &le; 0 dan mencetak peringatan ramah pengguna.</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Huruf masukan Y/T peka terhadap huruf kecil (case-sensitive).</td>
+                <td>Pengguna mengetik <code>y</code> kecil ditolak sebagai input tidak valid.</td>
+                <td>Menerapkan <code>toupper()</code> sebelum validasi karakter, sehingga huruf 'y' dan 'Y' diterima sama baiknya.</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Format angka ribuan sulit dibaca (misal <code>161000</code>).</td>
+                <td>Tampilan rincian tagihan di terminal kurang profesional dan rawan salah baca saat presentasi.</td>
+                <td>Membuat fungsi utilitas <code>formatRupiah()</code> yang otomatis menyisipkan tanda titik pemisah ribuan (contoh: <code>Rp161.000</code>).</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Perulangan pembagian dengan nol saat sesi kosong (total peserta = 0).</td>
+                <td>Rumus rata-rata menghasilkan nilai NaN / crash saat program langsung diakhiri.</td>
+                <td>Menambahkan proteksi awal <code>if (totalPeserta == 0)</code> pada fungsi pelaporan akhir Modul B dan integrasi.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===== 5. PENGETAHUAN YANG DIPEROLEH ===== -->
+      <section id="pengetahuan-baru">
+        <h2>5. Pengetahuan Baru yang Diperoleh</h2>
+        <div class="card">
+          <ul style="padding-left:20px; color:var(--text-sub); font-size:14px; line-height:1.9;">
+            <li><strong>Pola Validasi Perulangan (Input Guard):</strong> Memahami penerapan loop <code>while (true)</code> dengan kondisi pemutus yang menjamin variabel selalu memegang nilai yang sah secara logika dan tipe data sebelum digunakan dalam operasi aritmetika.</li>
+            <li><strong>Siklus Kolaborasi Git/GitHub:</strong> Menguasai pembuatan commit bertahap yang bermakna sesuai kaidah *conventional commits* (misal: <code>feat:</code>, <code>docs:</code>, <code>test:</code>), memahami fungsi <code>.gitignore</code> untuk memfilter file binary biner, serta mengelola publikasi web otomatis via GitHub Pages.</li>
+            <li><strong>Korelasi Visual Antar-Artefak:</strong> Menyadari pentingnya keselarasan 1:1 antara narasi Algoritma Deskriptif, Pseudocode terstruktur, Diagram Flowchart standar, dan Implementasi C++ nyata.</li>
+            <li><strong>Pentingnya Kesiapan Modifikasi Langsung (Live Coding):</strong> Karena telah memahami struktur modular dan fungsi terpisah, kami merasa percaya diri dalam menghadapi *parameter kejutan* saat presentasi di hadapan dosen penguji.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== 6. RENCANA PENGEMBANGAN UAS ===== -->
+      <section id="rencana-uas">
+        <h2>6. Rencana Pengembangan untuk UAS</h2>
+        <div class="card">
+          <p>Mengingat proyek UTS dibatasi pada konsep fundamental algoritma tanpa array dan OOP kompleks, kami merencanakan sejumlah fitur lanjutan yang akan diimplementasikan pada proyek Ujian Akhir Semester (UAS):</p>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:14px; margin-top:14px;">
+            <div style="background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:14px;">
+              <span class="badge badge-blue" style="margin-bottom:8px;">Struktur Data Array &amp; Struct / Class</span>
+              <p style="font-size:13px; color:var(--text-sub); line-height:1.6;">Menyimpan seluruh histori pendaftar ke dalam <code>struct Peserta</code> dan <code>vector&lt;Peserta&gt;</code> sehingga data dapat dicari, diurutkan (sorting berdasarkan tagihan/nama), dan dimodifikasi setelah diinput.</p>
+            </div>
+            <div style="background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:14px;">
+              <span class="badge badge-purple" style="margin-bottom:8px;">File Handling &amp; Persistensi Data</span>
+              <p style="font-size:13px; color:var(--text-sub); line-height:1.6;">Mengintegrasikan fitur ekspor dan impor file (CSV/JSON/TXT) menggunakan <code>fstream</code>, sehingga rekapitulasi seminar tidak hilang saat aplikasi ditutup dan dapat dibuka di spreadsheet.</p>
+            </div>
+            <div style="background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:14px;">
+              <span class="badge badge-green" style="margin-bottom:8px;">Antarmuka Interaktif / GUI / Web Service</span>
+              <p style="font-size:13px; color:var(--text-sub); line-height:1.6;">Mengembangkan visualisasi data grafis sederhana atau antarmuka berbasis formulir web interaktif yang langsung terhubung dengan backend C++.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <span>SSI1144 · Algoritma dan Pengantar Pemrograman · Universitas Ma Chung</span>
+      <span>Refleksi Proyek · Sistem Pendaftaran Seminar Nasional</span>
+    </footer>
+
+  </div>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const sidebar = document.getElementById('sidebar');
+    hamburger.addEventListener('click', () => sidebar.classList.toggle('open'));
+    document.addEventListener('click', e => {
+      if (!sidebar.contains(e.target) && !hamburger.contains(e.target))
+        sidebar.classList.remove('open');
+    });
+
+    // Highlight active sidebar anchor on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const anchors = document.querySelectorAll('.sidebar-nav a[href^="#"]');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          anchors.forEach(a => a.classList.remove('active'));
+          const match = document.querySelector(`.sidebar-nav a[href="#${e.target.id}"]`);
+          if (match) match.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    sections.forEach(s => obs.observe(s));
+  </script>
 </body>
+
 </html>

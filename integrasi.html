@@ -1,63 +1,607 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Program Terintegrasi | Seminar Nasional SSI1144</title>
+  <meta name="description"
+    content="Program Terintegrasi: Penggabungan Modul A (Proses Utama Pendaftaran) dan Modul B (Rekapitulasi & Statistik) Sistem Pendaftaran Seminar Nasional C++.">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
-<div class="shell">
-  <header class="topbar">
-    <a href="index.html" class="topbar-brand">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-      Seminar Nasional <span class="topbar-badge">SSI1144</span>
-    </a>
-    <button class="hamburger" id="hamburger">&#9776;</button>
-  </header>
-  <nav class="sidebar" id="sidebar">
-    <div class="sidebar-section">
-      <div class="sidebar-label">Halaman Utama</div>
-      <ul class="sidebar-nav">
-        <li><a href="index.html">Beranda</a></li>
-        <li><a href="analisis.html">Analisis Masalah</a></li>
-      </ul>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-label">Modul Program</div>
-      <ul class="sidebar-nav">
-        <li><a href="modul-a.html">Modul A</a></li>
-        <li><a href="modul-b.html">Modul B</a></li>
-        <li><a href="integrasi.html" class="active">Program Terintegrasi</a></li>
-      </ul>
-    </div>
-    <div class="sidebar-section">
-      <div class="sidebar-label">Dokumentasi</div>
-      <ul class="sidebar-nav">
-        <li><a href="refleksi.html">Refleksi</a></li>
-        <li><a href="pernyataan-ai.html">Pernyataan AI</a></li>
-      </ul>
-    </div>
-  </nav>
-  <main>
-    <div class="page-header">
-      <div class="page-tag">Integrasi · Final</div>
-      <h1 class="page-title">Program Terintegrasi</h1>
-      <p class="page-desc">Halaman ini sedang dalam pengerjaan.</p>
-    </div>
-    <div class="callout callout-warn">
-      <span>Konten halaman ini akan ditambahkan sesuai tahapan pengerjaan proyek.</span>
-    </div>
-  </main>
-  <footer>
-    <span>SSI1144 · Algoritma dan Pengantar Pemrograman · Universitas Ma Chung</span>
-    <span>Studi Kasus 07 · Sistem Pendaftaran Seminar Nasional</span>
-  </footer>
-</div>
-<script>
-  const h = document.getElementById('hamburger'), s = document.getElementById('sidebar');
-  h.addEventListener('click', () => s.classList.toggle('open'));
-  document.addEventListener('click', e => { if (!s.contains(e.target) && !h.contains(e.target)) s.classList.remove('open'); });
-</script>
+  <div class="shell">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <a href="index.html" class="topbar-brand">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+        </svg>
+        Seminar Nasional
+        <span class="topbar-badge">SSI1144</span>
+      </a>
+      <div class="topbar-right">
+        <a href="https://github.com/Rifuroo/UTS_alpro" class="topbar-link" target="_blank" rel="noopener">GitHub Repo</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Buka menu">&#9776;</button>
+    </header>
+
+    <!-- SIDEBAR -->
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">Halaman Utama</div>
+        <ul class="sidebar-nav">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="analisis.html">Analisis Masalah</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">Modul Program</div>
+        <ul class="sidebar-nav">
+          <li><a href="modul-a.html">Modul A</a></li>
+          <li><a href="modul-b.html">Modul B</a></li>
+          <li><a href="integrasi.html" class="active">Program Terintegrasi</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">Dokumentasi</div>
+        <ul class="sidebar-nav">
+          <li><a href="refleksi.html">Refleksi</a></li>
+          <li><a href="pernyataan-ai.html">Pernyataan AI</a></li>
+        </ul>
+      </div>
+
+      <!-- On-page anchor nav -->
+      <div class="sidebar-section">
+        <div class="sidebar-label">Di Halaman Ini</div>
+        <ul class="sidebar-nav">
+          <li><a href="#arsitektur">Proses Integrasi</a></li>
+          <li><a href="#flowchart">Flowchart Final</a></li>
+          <li><a href="#source-code">Source Code Final</a></li>
+          <li><a href="#hasil-eksekusi">Hasil Eksekusi</a></li>
+          <li><a href="#pengujian">Tabel Pengujian &amp; Trace</a></li>
+          <li><a href="#evaluasi-kesalahan">Kesalahan &amp; Perbaikan</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main>
+      <div class="page-header">
+        <div class="page-tag">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+            <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
+          </svg>
+          Integrasi · Modul A + Modul B · Final
+        </div>
+        <h1 class="page-title">Program Terintegrasi<br>Seminar Nasional</h1>
+        <p class="page-desc">Penggabungan menyeluruh Modul A (Proses Pendaftaran, Validasi Masukan, Kalkulasi Tarif, Diskon Bertingkat, dan Rincian Tagihan) dengan Modul B (Akumulasi Rekapitulasi Data, Penentuan Kategori Terbanyak dengan Tie-Breaker, dan Analisis Finansial) menjadi satu kesatuan sistem C++ yang utuh dan robust.</p>
+      </div>
+
+      <!-- ===== PROSES INTEGRASI ===== -->
+      <section id="arsitektur">
+        <h2>1. Proses &amp; Mekanisme Integrasi</h2>
+        <div class="card">
+          <p>Integrasi program dilakukan dengan menggabungkan pipeline input dan pemrosesan individual dari <strong>Modul A</strong> (ditulis oleh Riflo Ahmad Nendriansyah) bersama komponen akumulator dan pelaporan rekapitulasi dari <strong>Modul B</strong> (ditulis oleh Praysilia Sifra Paradisa). Arsitektur dirancang saling mengisi tanpa redundansi:</p>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:14px; margin-top:16px;">
+            <div style="background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:14px;">
+              <span class="badge badge-blue" style="margin-bottom:8px;">Peran Modul A</span>
+              <ul style="padding-left:18px; font-size:13px; color:var(--text-sub); line-height:1.7;">
+                <li>Sanitasi input string (mencegah bug <code>cin &gt;&gt;</code>).</li>
+                <li>Validasi data (nama, kategori, Y/T, anggota &gt; 0).</li>
+                <li>Kalkulasi diskon Early Bird (20%) &amp; Kelompok (10%).</li>
+                <li>Penambahan fasilitas tanpa diskon.</li>
+                <li>Penyajian rincian tagihan individual.</li>
+              </ul>
+            </div>
+            <div style="background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:14px;">
+              <span class="badge badge-purple" style="margin-bottom:8px;">Peran Modul B</span>
+              <ul style="padding-left:18px; font-size:13px; color:var(--text-sub); line-height:1.7;">
+                <li>Inisialisasi variabel akumulator global sesi.</li>
+                <li>Pencatatan frekuensi kategori dan fasilitas.</li>
+                <li>Akumulasi nilai bruto, total diskon, dan netto.</li>
+                <li>Algoritma tie-breaker kategori peserta terbanyak.</li>
+                <li>Penyajian laporan rekapitulasi komprehensif.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== FLOWCHART FINAL ===== -->
+      <section id="flowchart">
+        <h2>2. Flowchart Program Terintegrasi</h2>
+        <p style="color:var(--text-sub); font-size:13.5px; margin-bottom:14px;">Diagram alur terpadu menggambarkan perulangan transaksi peserta, titik percabangan diskon, akumulasi rekapitulasi, hingga pelaporan statistik akhir:</p>
+        <div class="flowchart-wrap" style="background:#0f172a; border-radius:12px; padding:16px; border:1px solid var(--border); text-align:center;">
+          <img src="assets/flowchart/flowchart-integrasi.svg" alt="Diagram Flowchart Program Terintegrasi" style="max-width:100%; height:auto; display:inline-block; border-radius:8px;">
+        </div>
+      </section>
+
+      <!-- ===== SOURCE CODE FINAL ===== -->
+      <section id="source-code">
+        <h2>3. Source Code Final Terintegrasi</h2>
+        <div class="code-block">
+          <div class="code-header">
+            <span class="code-lang">C++ (Standard C++17)</span>
+            <span class="code-filename">src/program_terintegrasi.cpp</span>
+            <button class="code-copy-btn" onclick="copyCode(this)">Salin</button>
+          </div>
+          <pre><code><span class="pp">#include</span> <span class="st">&lt;iostream&gt;</span>
+<span class="pp">#include</span> <span class="st">&lt;string&gt;</span>
+<span class="pp">#include</span> <span class="st">&lt;iomanip&gt;</span>
+<span class="pp">#include</span> <span class="st">&lt;cmath&gt;</span>
+<span class="pp">#include</span> <span class="st">&lt;sstream&gt;</span>
+
+<span class="kw">using namespace</span> <span class="nc">std</span>;
+
+<span class="cm">// ---- Konstanta Tarif &amp; Diskon ----</span>
+<span class="kw">const</span> <span class="ty">double</span> <span class="nc">TARIF_MAHASISWA</span>      = <span class="nu">75000.0</span>;
+<span class="kw">const</span> <span class="ty">double</span> <span class="nc">TARIF_DOSEN</span>          = <span class="nu">125000.0</span>;
+<span class="kw">const</span> <span class="ty">double</span> <span class="nc">TARIF_UMUM</span>           = <span class="nu">175000.0</span>;
+<span class="kw">const</span> <span class="ty">double</span> <span class="nc">DISKON_EARLY_BIRD</span>    = <span class="nu">0.20</span>;
+<span class="kw">const</span> <span class="ty">double</span> <span class="nc">DISKON_KELOMPOK</span>      = <span class="nu">0.10</span>;
+<span class="kw">const</span> <span class="ty">int</span>    <span class="nc">MIN_ANGGOTA_KELOMPOK</span> = <span class="nu">5</span>;
+<span class="kw">const</span> <span class="ty">double</span> <span class="nc">BIAYA_SERTIFIKAT</span>     = <span class="nu">20000.0</span>;
+<span class="kw">const</span> <span class="ty">double</span> <span class="nc">BIAYA_MAKAN</span>          = <span class="nu">35000.0</span>;
+
+<span class="cm">// Evaluasi Kategori Terbanyak (Fitur Modul B dengan Tie-Breaker)</span>
+<span class="ty">string</span> <span class="fn">evaluasiKategoriTerbanyak</span>(<span class="ty">int</span> mhs, <span class="ty">int</span> dsn, <span class="ty">int</span> umum) {
+    <span class="ty">int</span> maxVal = mhs;
+    <span class="kw">if</span> (dsn &gt; maxVal) maxVal = dsn;
+    <span class="kw">if</span> (umum &gt; maxVal) maxVal = umum;
+    <span class="kw">if</span> (maxVal == <span class="nu">0</span>) <span class="kw">return</span> <span class="st">"Belum ada peserta"</span>;
+
+    <span class="kw">if</span> (mhs == dsn &amp;&amp; dsn == umum)
+        <span class="kw">return</span> <span class="st">"Ketiga kategori imbang/seri (masing-masing "</span> + <span class="fn">to_string</span>(mhs) + <span class="st">" orang)"</span>;
+    <span class="kw">if</span> (mhs == dsn &amp;&amp; mhs == maxVal)
+        <span class="kw">return</span> <span class="st">"Mahasiswa &amp; Dosen imbang terbanyak (masing-masing "</span> + <span class="fn">to_string</span>(mhs) + <span class="st">" orang)"</span>;
+    <span class="kw">if</span> (mhs == umum &amp;&amp; mhs == maxVal)
+        <span class="kw">return</span> <span class="st">"Mahasiswa &amp; Umum imbang terbanyak (masing-masing "</span> + <span class="fn">to_string</span>(mhs) + <span class="st">" orang)"</span>;
+    <span class="kw">if</span> (dsn == umum &amp;&amp; dsn == maxVal)
+        <span class="kw">return</span> <span class="st">"Dosen &amp; Umum imbang terbanyak (masing-masing "</span> + <span class="fn">to_string</span>(dsn) + <span class="st">" orang)"</span>;
+
+    <span class="kw">if</span> (mhs == maxVal) <span class="kw">return</span> <span class="st">"Mahasiswa ("</span> + <span class="fn">to_string</span>(mhs) + <span class="st">" orang)"</span>;
+    <span class="kw">if</span> (dsn == maxVal) <span class="kw">return</span> <span class="st">"Dosen ("</span> + <span class="fn">to_string</span>(dsn) + <span class="st">" orang)"</span>;
+    <span class="kw">return</span> <span class="st">"Umum ("</span> + <span class="fn">to_string</span>(umum) + <span class="st">" orang)"</span>;
+}
+
+<span class="ty">int</span> <span class="fn">main</span>() {
+    <span class="cm">// Inisialisasi Akumulator Rekapitulasi (Modul B)</span>
+    <span class="ty">int</span>    totalMhs = <span class="nu">0</span>, totalDsn = <span class="nu">0</span>, totalUmum = <span class="nu">0</span>;
+    <span class="ty">int</span>    totalEB = <span class="nu">0</span>, totalKlp = <span class="nu">0</span>, totalSertif = <span class="nu">0</span>, totalMakan = <span class="nu">0</span>;
+    <span class="ty">double</span> totalBruto = <span class="nu">0</span>, totalDiskon = <span class="nu">0</span>, totalPendapatan = <span class="nu">0</span>;
+    <span class="ty">double</span> tagihanTerbesar = <span class="nu">0</span>;
+    <span class="ty">string</span> namaPesertaTerbesar = <span class="st">"-"</span>;
+    <span class="ty">int</span>    nomorUrutTerbesar = <span class="nu">0</span>;
+
+    <span class="ty">int</span>  nomorUrut = <span class="nu">1</span>;
+    <span class="ty">char</span> lanjut = <span class="st">'Y'</span>;
+
+    <span class="kw">while</span> (lanjut == <span class="st">'Y'</span>) {
+        <span class="cm">// [Modul A] Input data dengan validasi ketat</span>
+        <span class="ty">string</span> nama          = <span class="fn">bacaNama</span>(<span class="st">"  Nama peserta            : "</span>);
+        <span class="ty">int</span>    kategori      = <span class="fn">bacaKategori</span>();
+        <span class="ty">bool</span>   earlyBird     = (<span class="fn">bacaYaaTidak</span>(<span class="st">"  Early bird? (Y/T)       : "</span>) == <span class="st">'Y'</span>);
+        <span class="ty">int</span>    jumlahAnggota = <span class="fn">bacaIntPositif</span>(<span class="st">"  Jumlah anggota kelompok : "</span>);
+        <span class="ty">bool</span>   kelompok      = (jumlahAnggota &gt;= <span class="nc">MIN_ANGGOTA_KELOMPOK</span>);
+        <span class="ty">bool</span>   pesanSertif   = (<span class="fn">bacaYaaTidak</span>(<span class="st">"  Sertifikat cetak? (Y/T) : "</span>) == <span class="st">'Y'</span>);
+        <span class="ty">bool</span>   pesanMakan    = (<span class="fn">bacaYaaTidak</span>(<span class="st">"  Paket makan? (Y/T)      : "</span>) == <span class="st">'Y'</span>);
+
+        <span class="cm">// [Modul A] Kalkulasi tarif &amp; diskon bertingkat</span>
+        <span class="ty">double</span> tarif          = <span class="fn">tarifDasar</span>(kategori);
+        <span class="ty">double</span> diskonEB       = earlyBird ? tarif * <span class="nc">DISKON_EARLY_BIRD</span> : <span class="nu">0</span>;
+        <span class="ty">double</span> tarifSetelahEB = tarif - diskonEB;
+        <span class="ty">double</span> diskonKlp      = kelompok ? tarifSetelahEB * <span class="nc">DISKON_KELOMPOK</span> : <span class="nu">0</span>;
+        <span class="ty">double</span> tarifBersih    = tarifSetelahEB - diskonKlp;
+        <span class="ty">double</span> biayaTambahan  = (pesanSertif ? <span class="nc">BIAYA_SERTIFIKAT</span> : <span class="nu">0</span>) + (pesanMakan ? <span class="nc">BIAYA_MAKAN</span> : <span class="nu">0</span>);
+        <span class="ty">double</span> tagihan        = tarifBersih + biayaTambahan;
+        <span class="ty">double</span> diskonPeserta  = diskonEB + diskonKlp;
+
+        <span class="cm">// [Modul B] Akumulasi ke variabel rekapitulasi</span>
+        <span class="kw">if</span>      (kategori == <span class="nu">1</span>) totalMhs++;
+        <span class="kw">else if</span> (kategori == <span class="nu">2</span>) totalDsn++;
+        <span class="kw">else</span>                    totalUmum++;
+
+        <span class="kw">if</span> (earlyBird)   totalEB++;
+        <span class="kw">if</span> (kelompok)    totalKlp++;
+        <span class="kw">if</span> (pesanSertif) totalSertif++;
+        <span class="kw">if</span> (pesanMakan)  totalMakan++;
+
+        totalBruto      += (tarif + biayaTambahan);
+        totalDiskon     += diskonPeserta;
+        totalPendapatan += tagihan;
+
+        <span class="kw">if</span> (tagihan &gt; tagihanTerbesar) {
+            tagihanTerbesar = tagihan;
+            namaPesertaTerbesar = nama;
+            nomorUrutTerbesar = nomorUrut;
+        }
+
+        <span class="cm">// [Modul A] Tampilkan rincian tagihan individual</span>
+        <span class="fn">tampilkanRincianTagihan</span>(nomorUrut, nama, kategori, jumlahAnggota, earlyBird, tarif, diskonEB, diskonKlp, tarifBersih, biayaTambahan, tagihan);
+
+        nomorUrut++;
+        lanjut = <span class="fn">bacaYaaTidak</span>(<span class="st">"  Input transaksi pendaftaran berikutnya? (Y/T) : "</span>);
+    }
+
+    <span class="cm">// [Modul B] Tampilkan Laporan Rekapitulasi &amp; Statistik Akhir</span>
+    <span class="fn">tampilkanLaporanRekapitulasi</span>(totalMhs, totalDsn, totalUmum, totalEB, totalKlp, totalSertif, totalMakan, totalBruto, totalDiskon, totalPendapatan, tagihanTerbesar, namaPesertaTerbesar, nomorUrutTerbesar);
+
+    <span class="kw">return</span> <span class="nu">0</span>;
+}</code></pre>
+        </div>
+        <div class="callout callout-info">
+          <span>Source code terintegrasi lengkap dapat diakses pada berkas <code>src/program_terintegrasi.cpp</code> dalam repositori GitHub.</span>
+        </div>
+      </section>
+
+      <!-- ===== HASIL EKSEKUSI ===== -->
+      <section id="hasil-eksekusi">
+        <h2>4. Hasil Eksekusi Sesi Uji Terintegrasi</h2>
+        <div class="screenshot-wrap">
+          <div class="screenshot-bar">
+            <div class="screenshot-dots">
+              <span class="dot dot-r"></span>
+              <span class="dot dot-y"></span>
+              <span class="dot dot-g"></span>
+            </div>
+            <span>Terminal &mdash; program_terintegrasi.exe</span>
+          </div>
+          <div class="screenshot-body">================================================================
+     SISTEM PENDAFTARAN &amp; REKAPITULASI SEMINAR NASIONAL
+          PROGRAM TERINTEGRASI (MODUL A + MODUL B)
+      Studi Kasus 07 | SSI1144 | Universitas Ma Chung
+================================================================
+
+----------------------------------------------------------------
+  PENDAFTARAN TRANSAKSI #1
+----------------------------------------------------------------
+  Nama peserta            : Budi Santoso
+  Kategori (1=Mahasiswa, 2=Dosen, 3=Umum) : 1
+  Early bird? (Y/T)       : Y
+  Jumlah anggota kelompok : 6
+  Sertifikat cetak? (Y/T) : Y
+  Paket makan? (Y/T)      : Y
+
+================================================================
+  RINCIAN TAGIHAN PESERTA - TRANSAKSI #1
+================================================================
+  Nama peserta            : Budi Santoso
+  Kategori                : Mahasiswa
+  Jumlah anggota kelompok : 6 orang (diskon kelompok 10% aktif)
+  Status early bird       : Ya (diskon 20% aktif)
+----------------------------------------------------------------
+  Tarif dasar             :       Rp75.000
+  Diskon early bird (20%) :      -Rp15.000
+  Tarif setelah EB        :       Rp60.000
+  Diskon kelompok (10%)   :       -Rp6.000
+  Tarif bersih pendaftaran:       Rp54.000
+----------------------------------------------------------------
+  Biaya Layanan Tambahan (Tanpa Diskon):
+    Sertifikat cetak fisik:       Rp20.000
+    Paket makan/konsumsi  :       Rp35.000
+----------------------------------------------------------------
+  TOTAL DISKON DIBERIKAN  :      -Rp21.000
+  TOTAL TAGIHAN FINAL     :      Rp109.000
+================================================================
+
+  Input transaksi pendaftaran berikutnya? (Y/T) : Y
+
+----------------------------------------------------------------
+  PENDAFTARAN TRANSAKSI #2
+----------------------------------------------------------------
+  Nama peserta            : Dr. Hendra
+  Kategori (1=Mahasiswa, 2=Dosen, 3=Umum) : 2
+  Early bird? (Y/T)       : T
+  Jumlah anggota kelompok : 3
+  Sertifikat cetak? (Y/T) : T
+  Paket makan? (Y/T)      : T
+
+================================================================
+  RINCIAN TAGIHAN PESERTA - TRANSAKSI #2
+================================================================
+  Nama peserta            : Dr. Hendra
+  Kategori                : Dosen
+  Jumlah anggota kelompok : 3 orang (tidak memenuhi diskon kelompok)
+  Status early bird       : Tidak
+----------------------------------------------------------------
+  Tarif dasar             :      Rp125.000
+  Tarif bersih pendaftaran:      Rp125.000
+----------------------------------------------------------------
+  TOTAL DISKON DIBERIKAN  :           -Rp0
+  TOTAL TAGIHAN FINAL     :      Rp125.000
+================================================================
+
+  Input transaksi pendaftaran berikutnya? (Y/T) : Y
+
+----------------------------------------------------------------
+  PENDAFTARAN TRANSAKSI #3
+----------------------------------------------------------------
+  Nama peserta            : Siti Rahma
+  Kategori (1=Mahasiswa, 2=Dosen, 3=Umum) : 3
+  Early bird? (Y/T)       : Y
+  Jumlah anggota kelompok : 5
+  Sertifikat cetak? (Y/T) : T
+  Paket makan? (Y/T)      : Y
+
+================================================================
+  RINCIAN TAGIHAN PESERTA - TRANSAKSI #3
+================================================================
+  Nama peserta            : Siti Rahma
+  Kategori                : Umum
+  Jumlah anggota kelompok : 5 orang (diskon kelompok 10% aktif)
+  Status early bird       : Ya (diskon 20% aktif)
+----------------------------------------------------------------
+  Tarif dasar             :      Rp175.000
+  Diskon early bird (20%) :      -Rp35.000
+  Tarif setelah EB        :      Rp140.000
+  Diskon kelompok (10%)   :      -Rp14.000
+  Tarif bersih pendaftaran:      Rp126.000
+----------------------------------------------------------------
+  Biaya Layanan Tambahan (Tanpa Diskon):
+    Paket makan/konsumsi  :       Rp35.000
+----------------------------------------------------------------
+  TOTAL DISKON DIBERIKAN  :      -Rp49.000
+  TOTAL TAGIHAN FINAL     :      Rp161.000
+================================================================
+
+  Input transaksi pendaftaran berikutnya? (Y/T) : T
+
+
+================================================================
+     LAPORAN REKAPITULASI &amp; STATISTIK SEMINAR NASIONAL
+                   OUTPUT AKHIR MODUL B
+================================================================
+
+  [1] DISTRIBUSI PESERTA MENURUT KATEGORI
+----------------------------------------------------------------
+  Kategori          Jumlah Peserta  Persentase    Tarif Satuan
+----------------------------------------------------------------
+  1. Mahasiswa      1 orang         33.3%         Rp75.000
+  2. Dosen          1 orang         33.3%         Rp125.000
+  3. Umum           1 orang         33.3%         Rp175.000
+----------------------------------------------------------------
+  TOTAL PESERTA     3 orang         100.0%        -
+----------------------------------------------------------------
+  &gt;&gt; Kategori Peserta Terbanyak : Ketiga kategori imbang/seri (masing-masing 1 orang)
+
+  [2] REKAPITULASI FASILITAS &amp; BENEFIT
+----------------------------------------------------------------
+  - Peserta Early Bird (Diskon 20%)  : 2     orang (66.7%)
+  - Rombongan Diskon Kelompok (&gt;=5)  : 2     transaksi
+  - Pemesan Sertifikat Cetak fisik   : 1     orang (Rp20.000)
+  - Pemesan Paket Makan / Konsumsi   : 2     orang (Rp70.000)
+
+  [3] REKAPITULASI FINANSIAL &amp; ARUS PENDAPATAN
+----------------------------------------------------------------
+  Total Nilai Transaksi Kotor (Bruto) :       Rp465.000
+  Total Potongan Diskon Early Bird    :       -Rp50.000
+  Total Potongan Diskon Kelompok      :       -Rp20.000
+----------------------------------------------------------------
+  TOTAL AKUMULASI DISKON DIKELUARKAN  :       -Rp70.000
+  TOTAL PENDAPATAN BERSIH KEGIATAN    :       Rp395.000
+================================================================
+
+  [4] STATISTIK &amp; METRIK ANALISIS
+----------------------------------------------------------------
+  - Rata-rata Pendapatan per Peserta  : Rp131.667 / orang
+  - Rata-rata Diskon per Peserta      : Rp23.333 / orang
+  - Transaksi Terbesar (Puncak)       : Rp161.000
+    (Oleh Peserta #3 - Siti Rahma)
+================================================================
+
+  Program selesai dieksekusi dengan sukses. Terima kasih.</div>
+        </div>
+      </section>
+
+      <!-- ===== PENGUJIAN & TRACE TABLE ===== -->
+      <section id="pengujian">
+        <h2>5. Pengujian &amp; Trace Table Program Terintegrasi</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Skenario Pengujian</th>
+                <th>Masukan / Rangkaian Transaksi</th>
+                <th>Hasil yang Diharapkan</th>
+                <th>Hasil Aktual</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Uji Siklus Penuh Integrasi (3 Transaksi Berbeda)</td>
+                <td>
+                  1. Mhs, EB:Y, Klp:6, Sertif:Y, Makan:Y<br>
+                  2. Dosen, EB:T, Klp:3, Sertif:T, Makan:T<br>
+                  3. Umum, EB:Y, Klp:5, Sertif:T, Makan:Y
+                </td>
+                <td>
+                  • Tagihan 1: Rp109.000<br>
+                  • Tagihan 2: Rp125.000<br>
+                  • Tagihan 3: Rp161.000<br>
+                  • Total Pendapatan: Rp395.000<br>
+                  • Terbanyak: Imbang ketiga kategori (1:1:1)
+                </td>
+                <td>
+                  Tagihan presisi Rp109k, Rp125k, Rp161k. Total Pendapatan Rp395.000, evaluasi tie-breaker mendeteksi ketiga kategori imbang.
+                </td>
+                <td><span class="badge badge-green">Berhasil</span></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Tie-Breaker Dua Kategori Seri</td>
+                <td>
+                  1. Mhs, EB:T, Klp:1, Sertif:T, Makan:T<br>
+                  2. Dosen, EB:T, Klp:1, Sertif:T, Makan:T
+                </td>
+                <td>Kategori Terbanyak: Mahasiswa &amp; Dosen imbang terbanyak (masing-masing 1)</td>
+                <td>Terbanyak: Mahasiswa &amp; Dosen imbang terbanyak</td>
+                <td><span class="badge badge-green">Berhasil</span></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Pemenang Tunggal Kategori Terbanyak</td>
+                <td>
+                  1. Mhs, 2. Mhs, 3. Umum
+                </td>
+                <td>Kategori Terbanyak: Mahasiswa (2 orang)</td>
+                <td>Terbanyak: Mahasiswa (2 orang)</td>
+                <td><span class="badge badge-green">Berhasil</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="margin-top:24px;">Trace Table Aliran Data Akumulator Antar-Modul</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Iterasi</th>
+                <th>Peserta</th>
+                <th>Modul A (Tagihan)</th>
+                <th>Modul B (totalBruto)</th>
+                <th>Modul B (totalDiskon)</th>
+                <th>Modul B (totalPendapatan)</th>
+                <th>Rekor Transaksi Puncak</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Inisialisasi</td>
+                <td>-</td>
+                <td>-</td>
+                <td>Rp0</td>
+                <td>Rp0</td>
+                <td>Rp0</td>
+                <td>Rp0 (-)</td>
+              </tr>
+              <tr>
+                <td>Transaksi 1</td>
+                <td>Budi Santoso (Mhs)</td>
+                <td>Rp109.000</td>
+                <td>Rp130.000</td>
+                <td>Rp21.000</td>
+                <td>Rp109.000</td>
+                <td>Rp109.000 (#1 Budi)</td>
+              </tr>
+              <tr>
+                <td>Transaksi 2</td>
+                <td>Dr. Hendra (Dosen)</td>
+                <td>Rp125.000</td>
+                <td>Rp255.000</td>
+                <td>Rp21.000</td>
+                <td>Rp234.000</td>
+                <td>Rp125.000 (#2 Hendra)</td>
+              </tr>
+              <tr>
+                <td>Transaksi 3</td>
+                <td>Siti Rahma (Umum)</td>
+                <td>Rp161.000</td>
+                <td>Rp465.000</td>
+                <td>Rp70.000</td>
+                <td>Rp395.000</td>
+                <td>Rp161.000 (#3 Siti)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===== DAFTAR KESALAHAN & PERBAIKAN ===== -->
+      <section id="evaluasi-kesalahan">
+        <h2>6. Daftar Kesalahan Saat Integrasi &amp; Solusi Perbaikan</h2>
+        <div class="card">
+          <div class="table-wrap" style="margin:0; border:none;">
+            <table>
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Permasalahan / Kendala yang Ditemukan</th>
+                  <th>Dampak pada Program</th>
+                  <th>Solusi / Tindakan Perbaikan yang Dilakukan</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td><strong>Konflik I/O Buffer C++:</strong> Penggunaan <code>cin &gt;&gt;</code> pada input angka meninggalkan karakter <code>\n</code> di buffer.</td>
+                  <td>Input nama peserta berikutnya langsung terlewat (skip) tanpa sempat diketik pengguna.</td>
+                  <td>Menyeragamkan seluruh input menggunakan fungsi <code>bacaBaris()</code> berbasis <code>getline()</code> dan konversi string dengan <code>istringstream</code>.</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td><strong>Urutan Perhitungan Diskon:</strong> Diskon kelompok sempat dihitung dari tarif awal, bukan tarif setelah diskon Early Bird.</td>
+                  <td>Potongan diskon kelompok berlebih (Rp7.500 alih-alih Rp6.000 pada tarif mahasiswa), melanggar ketentuan soal.</td>
+                  <td>Memperbaiki urutan aritmetika: <code>tarifSetelahEB = tarif - diskonEB</code>, lalu <code>diskonKelompok = tarifSetelahEB * 0.10</code>.</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td><strong>Evaluasi Kategori Seri (Tie):</strong> Awalnya hanya menggunakan perbandingan <code>&gt;</code> sederhana.</td>
+                  <td>Jika jumlah mahasiswa = dosen, kategori kedua tidak terdeteksi atau hanya salah satu yang ditampilkan.</td>
+                  <td>Membuat fungsi tie-breaker komprehensif <code>evaluasiKategoriTerbanyak()</code> yang mengecek kondisi 3 kategori seri dan 2 kategori seri.</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td><strong>Biaya Fasilitas Terkena Diskon:</strong> Sertifikat dan makan sempat dijumlahkan sebelum pemotongan diskon.</td>
+                  <td>Panitia merugi karena harga modal konsumsi ikut terpotong diskon 20%.</td>
+                  <td>Biaya tambahan dipisahkan ke variabel <code>biayaTambahan</code> dan baru ditambahkan pada <code>tarifBersih</code> di tahap akhir.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <span>SSI1144 · Algoritma dan Pengantar Pemrograman · Universitas Ma Chung</span>
+      <span>Program Terintegrasi · Sistem Pendaftaran Seminar Nasional</span>
+    </footer>
+
+  </div>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const sidebar = document.getElementById('sidebar');
+    hamburger.addEventListener('click', () => sidebar.classList.toggle('open'));
+    document.addEventListener('click', e => {
+      if (!sidebar.contains(e.target) && !hamburger.contains(e.target))
+        sidebar.classList.remove('open');
+    });
+
+    function copyCode(btn) {
+      const pre = btn.closest('.code-block').querySelector('pre');
+      navigator.clipboard.writeText(pre.innerText).then(() => {
+        btn.textContent = 'Tersalin!';
+        setTimeout(() => btn.textContent = 'Salin', 2000);
+      });
+    }
+
+    // Highlight active sidebar anchor on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const anchors = document.querySelectorAll('.sidebar-nav a[href^="#"]');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          anchors.forEach(a => a.classList.remove('active'));
+          const match = document.querySelector(`.sidebar-nav a[href="#${e.target.id}"]`);
+          if (match) match.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    sections.forEach(s => obs.observe(s));
+  </script>
 </body>
+
 </html>
