@@ -1,0 +1,125 @@
+﻿
+================================================================
+     SISTEM PENDAFTARAN & REKAPITULASI SEMINAR NASIONAL
+          PROGRAM TERINTEGRASI (MODUL A + MODUL B)
+      Studi Kasus 07 | SSI1144 | Universitas Ma Chung
+================================================================
+
+----------------------------------------------------------------
+  PENDAFTARAN TRANSAKSI #1
+----------------------------------------------------------------
+  Nama peserta            :   Kategori (1=Mahasiswa, 2=Dosen, 3=Umum) :   Early bird? (Y/T)       :   Jumlah anggota kelompok :   Sertifikat cetak? (Y/T) :   Paket makan? (Y/T)      : 
+================================================================
+  RINCIAN TAGIHAN PESERTA - TRANSAKSI #1
+================================================================
+  Nama peserta            : Budi Santoso
+  Kategori                : Mahasiswa
+  Jumlah anggota kelompok : 6 orang (diskon kelompok 10% aktif)
+  Status early bird       : Ya (diskon 20% aktif)
+----------------------------------------------------------------
+  Tarif dasar             :       Rp75.000
+  Diskon early bird (20%) :      -Rp15.000
+  Tarif setelah EB        :       Rp60.000
+  Diskon kelompok (10%)   :       -Rp6.000
+  Tarif bersih pendaftaran:       Rp54.000
+----------------------------------------------------------------
+  Biaya Layanan Tambahan (Tanpa Diskon):
+    Sertifikat cetak fisik:       Rp20.000
+    Paket makan/konsumsi  :       Rp35.000
+----------------------------------------------------------------
+  TOTAL DISKON DIBERIKAN  :      -Rp21.000
+  TOTAL TAGIHAN FINAL     :      Rp109.000
+================================================================
+
+  Input transaksi pendaftaran berikutnya? (Y/T) : 
+----------------------------------------------------------------
+  PENDAFTARAN TRANSAKSI #2
+----------------------------------------------------------------
+  Nama peserta            :   Kategori (1=Mahasiswa, 2=Dosen, 3=Umum) :   Early bird? (Y/T)       :   Jumlah anggota kelompok :   Sertifikat cetak? (Y/T) :   Paket makan? (Y/T)      : 
+================================================================
+  RINCIAN TAGIHAN PESERTA - TRANSAKSI #2
+================================================================
+  Nama peserta            : Dr. Hendra
+  Kategori                : Dosen
+  Jumlah anggota kelompok : 3 orang (tidak memenuhi diskon kelompok)
+  Status early bird       : Tidak
+----------------------------------------------------------------
+  Tarif dasar             :      Rp125.000
+  Tarif bersih pendaftaran:      Rp125.000
+----------------------------------------------------------------
+  TOTAL DISKON DIBERIKAN  :           -Rp0
+  TOTAL TAGIHAN FINAL     :      Rp125.000
+================================================================
+
+  Input transaksi pendaftaran berikutnya? (Y/T) : 
+----------------------------------------------------------------
+  PENDAFTARAN TRANSAKSI #3
+----------------------------------------------------------------
+  Nama peserta            :   Kategori (1=Mahasiswa, 2=Dosen, 3=Umum) :   Early bird? (Y/T)       :   Jumlah anggota kelompok :   Sertifikat cetak? (Y/T) :   Paket makan? (Y/T)      : 
+================================================================
+  RINCIAN TAGIHAN PESERTA - TRANSAKSI #3
+================================================================
+  Nama peserta            : Siti Rahma
+  Kategori                : Umum
+  Jumlah anggota kelompok : 5 orang (diskon kelompok 10% aktif)
+  Status early bird       : Ya (diskon 20% aktif)
+----------------------------------------------------------------
+  Tarif dasar             :      Rp175.000
+  Diskon early bird (20%) :      -Rp35.000
+  Tarif setelah EB        :      Rp140.000
+  Diskon kelompok (10%)   :      -Rp14.000
+  Tarif bersih pendaftaran:      Rp126.000
+----------------------------------------------------------------
+  Biaya Layanan Tambahan (Tanpa Diskon):
+    Paket makan/konsumsi  :       Rp35.000
+----------------------------------------------------------------
+  TOTAL DISKON DIBERIKAN  :      -Rp49.000
+  TOTAL TAGIHAN FINAL     :      Rp161.000
+================================================================
+
+  Input transaksi pendaftaran berikutnya? (Y/T) : 
+
+================================================================
+     LAPORAN REKAPITULASI & STATISTIK SEMINAR NASIONAL
+                   OUTPUT AKHIR MODUL B
+================================================================
+
+  [1] DISTRIBUSI PESERTA MENURUT KATEGORI
+----------------------------------------------------------------
+  Kategori          Jumlah Peserta  Persentase    Tarif Satuan
+----------------------------------------------------------------
+  1. Mahasiswa      1 orang         33.3%         Rp75.000
+  2. Dosen          1 orang         33.3%         Rp125.000
+  3. Umum           1 orang         33.3%         Rp175.000
+----------------------------------------------------------------
+  TOTAL PESERTA     3 orang         100.0%        -
+----------------------------------------------------------------
+  >> Kategori Peserta Terbanyak : Ketiga kategori imbang/seri (masing-masing 1 orang)
+
+  [2] REKAPITULASI FASILITAS & BENEFIT
+----------------------------------------------------------------
+  - Peserta Early Bird (Diskon 20%)  : 2     orang (66.7%)
+  - Rombongan Diskon Kelompok (>=5)  : 2     transaksi
+  - Pemesan Sertifikat Cetak fisik   : 1     orang (Rp20.000)
+  - Pemesan Paket Makan / Konsumsi   : 2     orang (Rp70.000)
+
+  [3] REKAPITULASI FINANSIAL & ARUS PENDAPATAN
+----------------------------------------------------------------
+  Total Nilai Transaksi Kotor (Bruto) :       Rp465.000
+  Total Potongan Diskon Early Bird    :       -Rp50.000
+  Total Potongan Diskon Kelompok      :       -Rp20.000
+----------------------------------------------------------------
+  TOTAL AKUMULASI DISKON DIKELUARKAN  :       -Rp70.000
+  TOTAL PENDAPATAN BERSIH KEGIATAN    :       Rp395.000
+================================================================
+
+  [4] STATISTIK & METRIK ANALISIS
+----------------------------------------------------------------
+  - Rata-rata Pendapatan per Peserta  : Rp131.667 / orang
+  - Rata-rata Diskon per Peserta      : Rp23.333 / orang
+  - Transaksi Terbesar (Puncak)       : Rp161.000
+    (Oleh Peserta #3 - Siti Rahma)
+================================================================
+
+  Program selesai dieksekusi dengan sukses. Terima kasih.
+
